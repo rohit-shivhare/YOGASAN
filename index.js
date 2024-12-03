@@ -85,3 +85,10 @@ scrollToTopBtn.onclick = function () {
     behavior: "smooth", // Smooth scroll effect
   });
 };
+
+// Go To Login
+function gotoLogin() {
+  varName.addEventListener('click', () => {
+    document.location = "access/access.html";
+  });
+}
