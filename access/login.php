@@ -32,14 +32,14 @@ if ($result->num_rows > 0) {
     if ($password === $user['password']) {
         session_start();
         $_SESSION['username'] = $username;
-        echo "Login successful!";
+        echo "<script>alert('Login Successful!');</script>";
         header("Location: ../home.html"); // Redirect to home page
         exit;
     } else {
-        echo "Incorrect password!";
+        echo "<script>alert('Incorrect Password!');</script>";
     }
 } else {
-    echo "User not found!";
+    echo "<script>alert('User not found!');</script>";
 }
 
 // Close connection
