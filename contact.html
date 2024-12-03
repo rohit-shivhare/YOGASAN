@@ -165,11 +165,13 @@
             border-radius: 5px;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
         }
 
         .feedback-item {
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
+            position: relative;
         }
 
         .feedback-item:last-child {
@@ -178,6 +180,23 @@
 
         .feedback-item .stars {
             color: #f39c12;
+        }
+
+        .delete-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
         }
     </style>
 </head>
@@ -386,10 +405,14 @@
         </form>
     </section>
 
-    <div class="feedback-list" id="feedbackList">
-        <h3>Feedbacks</h3>
-        <!-- Feedbacks will appear here -->
-    </div>
+    <section class="user-feedback">
+        <div class="feedback-list" id="feedbackContainer">
+            <h3>Feedbacks</h3>
+            <div id="feedbackList">
+                <!-- Feedbacks will appear here -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer  -->
     <footer class="footer" id="contact">
@@ -454,64 +477,118 @@
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
     <!-- Feedback Form & Local Storage  -->
     <script>
-        // Initialize variables
+        // Selected rating value, default is 1
         let selectedRating = 1;
 
-        // Add event listeners to stars
+        // Get all rating stars
         const stars = document.querySelectorAll('#rating button');
+
+        // Event listener for rating stars
         stars.forEach((star, index) => {
             star.addEventListener('click', function () {
+                // Set the selected rating value based on the clicked star
                 selectedRating = this.getAttribute('data-value');
-                // Remove active class from all stars
+
+                // Reset all stars to inactive
                 stars.forEach(s => s.classList.remove('active'));
-                // Add active class to selected and all previous stars
+
+                // Set stars up to the selected one as active
                 for (let i = 0; i <= index; i++) {
                     stars[i].classList.add('active');
                 }
             });
         });
 
-        // Load feedbacks from localStorage
+        // Get references to feedback container and feedback list
+        const feedbackContainer = document.getElementById('feedbackContainer');
         const feedbackList = document.getElementById('feedbackList');
+
+        // Function to load feedbacks from localStorage
         function loadFeedbacks() {
+            // Get feedbacks from localStorage or initialize an empty array
             const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-            feedbackList.innerHTML = '<h3>Feedbacks</h3>';
-            feedbacks.forEach(feedback => {
-                const feedbackItem = document.createElement('div');
-                feedbackItem.classList.add('feedback-item');
-                feedbackItem.innerHTML = `
-          <p><strong>${feedback.name}</strong> (${feedback.email})</p>
-          <p class="stars">${'★'.repeat(feedback.rating)}</p>
-          <p>${feedback.feedback}</p>
-        `;
-                feedbackList.appendChild(feedbackItem);
-            });
+
+            // If no feedbacks exist, hide the feedback container
+            if (feedbacks.length === 0) {
+                feedbackContainer.style.display = 'none';
+            } else {
+                // Otherwise, show the feedback container
+                feedbackContainer.style.display = 'block';
+                feedbackList.innerHTML = ''; // Clear current feedbacks in the UI
+
+                // Loop through each feedback and display it
+                feedbacks.forEach((feedback, index) => {
+                    const feedbackItem = document.createElement('div');
+                    feedbackItem.classList.add('feedback-item');
+                    feedbackItem.innerHTML = `
+                        <p><strong>${feedback.name}</strong> (${feedback.email})</p>
+                        <p class="stars">${'★'.repeat(feedback.rating)}</p>
+                        <p>${feedback.feedback}</p>
+                        <button class="delete-btn" data-index="${index}">Delete</button>
+                    `;
+                    feedbackList.appendChild(feedbackItem);
+                });
+
+                // Add delete functionality to each delete button
+                const deleteButtons = document.querySelectorAll('.delete-btn');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Get the index of the feedback to delete
+                        const index = this.getAttribute('data-index');
+
+                        // Show confirmation message
+                        const confirmDelete = confirm("Are you sure you want to delete this feedback?");
+
+                        // If the user confirms, delete the feedback
+                        if (confirmDelete) {
+                            feedbacks.splice(index, 1); // Remove feedback from the array
+                            localStorage.setItem('feedbacks', JSON.stringify(feedbacks)); // Update localStorage
+                            loadFeedbacks(); // Reload feedback list in the UI
+                            alert("Feedback deleted successfully."); // Show success message
+                        }
+                    });
+                });
+            }
         }
 
+        // Initial load of feedbacks from localStorage
         loadFeedbacks();
 
-        // Handle form submission
+        // Add event listener for the feedback form submission
         document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent form submission
 
+            // Get form field values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const feedbackText = document.getElementById('feedback').value.trim();
 
+            // Get feedbacks from localStorage or initialize an empty array
             const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+
+            // Add new feedback to the array
             feedbacks.push({ name, email, rating: selectedRating, feedback: feedbackText });
+
+            // Save updated feedbacks array back to localStorage
             localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
 
+            // Reload feedbacks to update the UI
             loadFeedbacks();
+
+            // Reset the form
             this.reset();
-            selectedRating = 1; // Reset rating
+
+            // Reset the selected rating to the default (1)
+            selectedRating = 1;
+
+            // Reset the stars' active states
             stars.forEach(s => s.classList.remove('active'));
 
-            alert(`Thank you, ${name}! Your feedback has been submitted.\n\nRating: ${selectedRating} stars\nFeedback: ${feedbackText}`);
-            this.reset();
+            // Show a thank-you message
+            alert(`Thank you, ${name}! Your feedback has been submitted.`);
         });
-
     </script>
+
 
 </body>
 
