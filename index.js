@@ -86,20 +86,14 @@ scrollToTopBtn.onclick = function () {
   });
 };
 
-
 // Go To Login
-function gotoLogin() {
-  const loginButtons = document.querySelectorAll('.gologin-btn'); // Select all buttons
-  if (loginButtons.length > 0) {
-      loginButtons.forEach((button) => {
-          button.addEventListener('click', () => {
-              document.location.href = "access/access.html";
-          });
-      });
-  } else {
-      console.error("No Button elements with the class 'gologin-btn' found.");
-  }
+const loginButtons = document.querySelectorAll('.gologin-btn'); // Select all buttons
+if (loginButtons.length > 0) {
+  loginButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      document.location.href = "access/access.html";
+    });
+  });
+} else {
+  console.error("No Button elements found.");
 }
-
-// Call the function after the DOM is loaded
-document.addEventListener('DOMContentLoaded', gotoLogin);
