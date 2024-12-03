@@ -94,6 +94,7 @@
             border-radius: 5px;
             padding: 20px;
             margin-top: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -158,7 +159,7 @@
         }
 
         .feedback-list {
-            max-width: 600px;
+            max-width: 800px;
             margin: 20px auto 0;
             background: #fff;
             border: 1px solid #ddd;
@@ -166,6 +167,7 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: none;
+            margin-bottom: 50px;
         }
 
         .feedback-item {
@@ -405,9 +407,10 @@
         </form>
     </section>
 
+    <!-- Section-4  -->
     <section class="user-feedback">
+        <h3 class="section__header" id="feedbackHeader" style="margin-top: 50px;">Feedbacks</h3>
         <div class="feedback-list" id="feedbackContainer">
-            <h3>Feedbacks</h3>
             <div id="feedbackList">
                 <!-- Feedbacks will appear here -->
             </div>
@@ -502,6 +505,7 @@
         // Get references to feedback container and feedback list
         const feedbackContainer = document.getElementById('feedbackContainer');
         const feedbackList = document.getElementById('feedbackList');
+        const feedbackHeader = document.getElementById('feedbackHeader');
 
         // Function to load feedbacks from localStorage
         function loadFeedbacks() {
@@ -511,9 +515,11 @@
             // If no feedbacks exist, hide the feedback container
             if (feedbacks.length === 0) {
                 feedbackContainer.style.display = 'none';
+                feedbackHeader.style.display = 'none';
             } else {
                 // Otherwise, show the feedback container
                 feedbackContainer.style.display = 'block';
+                feedbackHeader.style.display = 'block';
                 feedbackList.innerHTML = ''; // Clear current feedbacks in the UI
 
                 // Loop through each feedback and display it
@@ -521,9 +527,9 @@
                     const feedbackItem = document.createElement('div');
                     feedbackItem.classList.add('feedback-item');
                     feedbackItem.innerHTML = `
-                        <p><strong>${feedback.name}</strong> (${feedback.email})</p>
+                        <p>Name:&nbsp; <strong>${feedback.name}</strong><br>Email:&nbsp; ${feedback.email}</p>
                         <p class="stars">${'★'.repeat(feedback.rating)}</p>
-                        <p>${feedback.feedback}</p>
+                        <p>Feedback:&nbsp; ${feedback.feedback}</p>
                         <button class="delete-btn" data-index="${index}">Delete</button>
                     `;
                     feedbackList.appendChild(feedbackItem);
