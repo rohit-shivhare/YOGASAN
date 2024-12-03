@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: #d29c11; 
+}
+
 img {
   width: 100%;
   display: flex;
