@@ -18,16 +18,28 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// Insert user into database
-$sql = "INSERT INTO users (username, email, password) 
-        VALUES (?, ?, ?)";
+// Check if the email already exists in the database
+$sql = "SELECT * FROM users WHERE email = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $username, $email, $password);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if ($stmt->execute()) {
-    echo "<script>alert('Registration Successful!');</script>";
+// If email already exists, show an error message
+if ($result->num_rows > 0) {
+    echo "<script>alert('This email is already registered!');</script>";
 } else {
-    echo "Error: " . $stmt->error;
+    // Insert user into database if the email is unique
+    $sql = "INSERT INTO users (username, email, password) 
+            VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Registration Successful!');</script>";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
 }
 
 // Close connection
