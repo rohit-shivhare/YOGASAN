@@ -25,7 +25,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $username, $email, $password);
 
 if ($stmt->execute()) {
-    echo "Registration successful!";
+    echo "<script>alert('Registration Successful!');</script>";
 } else {
     echo "Error: " . $stmt->error;
 }
