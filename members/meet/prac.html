@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="prac.css">
+  <title>Register - Yogasan</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="box">
+      <img id="logo" src="/assets/logo.png">
+      <h1>Register</h1>
+      
+      <form action="register.php" method="post">
+        <div id="form">
+  
+          <div class="row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input 
+                type="text" required autocomplete="off" 
+                class="form-control" id="firstName" name="firstName" placeholder="Enter your First Name"
+                title="Length of First Name should be less than 20 characters" 
+                minlength="4" maxlength="20" 
+              >
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input 
+                type="text" required autocomplete="off" 
+                class="form-control" id="lastName" name="lastName" placeholder="Enter your Last Name"
+                title="Length of Last Name should be less than 20 characters" 
+                minlength="4" maxlength="20" 
+              >
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input 
+                type="email" required autocomplete="off" 
+                class="form-control" id="email" name="email" placeholder="Enter your email" 
+                title="Please enter a valid email address, Ex:- your@gmail.com" 
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                maxlength="50"
+              >
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone no.</label>
+              <input 
+                type="tel" required autocomplete="off" 
+                class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                title="Enter the 10 digits of your number, no need of +91, don't start with 0." 
+                pattern="[1-9]{1}[0-9]{9}" 
+                minlength="10" maxlength="10" 
+              >
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" title="Select your gender" name="gender" class="form-control" required autocomplete="off">
+                <option value="" selected disabled hidden>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Date of Birth</label>
+              <input 
+                type="date" required autocomplete="off" 
+                class="form-control" id="age" name="age"
+              >
+            </div>
+
+          </div>
+  
+          <div class="row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input 
+              type="password" required autocomplete="off" 
+              class="form-control" id="password" name="password" placeholder="Create a password ~(4 to 10 characters)" 
+              title="Password must be 4 to 10 characters long and include at least one these characters (@, #, _, $, &)." 
+              pattern="(?=.*[@#$&_]).{4,10}" 
+              minlength="4" maxlength="10" 
+              >
+              <p class="formatDescription">Atleast contain any one of these (@, #, _, $, &).</p>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input 
+              type="password" required autocomplete="off" 
+              class="form-control" id="confirmPassword" placeholder="Rewrite the password" 
+              title="Please rewrite the password" 
+              pattern="(?=.*[@#$&_]).{4,10}" 
+              minlength="4" maxlength="10" 
+              >
+            </div>
+          </div>
+  
+          <div id="submit">
+            <button id="register" type="submit">Register</button>  
+          </div>
+  
+        </div>
+      </form>
+
+      <div class="hr-container">
+        <hr>
+        <p>OR</p>
+        <hr>
+      </div>
+      Already a user login now! - <a href="./Login/login.html">Click here</a>.
+      
+    </div>
+  </div>
+
+</body>
+</html>
