@@ -616,7 +616,7 @@ header::before {
 
 #membership-details {
     background-color: var(--primary-color-dark);
-    background-image: linear-gradient(to top, #d1cabb, transparent);
+    margin-bottom: 50px;
 }
 
 .offcanvas {
