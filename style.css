@@ -726,3 +726,7 @@ header::before {
     gap: 10px;
     align-items: center;
 }
+
+.logout {
+    height: 20px;
+}
