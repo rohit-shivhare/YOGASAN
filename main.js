@@ -100,28 +100,64 @@ const formSection = document.getElementById('form-section');
 const nameField = document.getElementById('name');
 const emailField = document.getElementById('email');
 const mobileField = document.getElementById('mobile');
+const ageField = document.getElementById('age');
 const heightField = document.getElementById('height');
 const weightField = document.getElementById('weight');
-const ageField = document.getElementById('age');
 
 const displayName = document.getElementById('display-name');
 const displayEmail = document.getElementById('display-email');
 const displayMobile = document.getElementById('display-mobile');
+const displayAge = document.getElementById('display-age');
 const displayHeight = document.getElementById('display-height');
 const displayWeight = document.getElementById('display-weight');
-const displayAge = document.getElementById('display-age');
+
+// Load saved data from local storage
+window.onload = function () {
+    const savedProfile = JSON.parse(localStorage.getItem('profileData'));
+    if (savedProfile) {
+        nameField.value = savedProfile.name || '';
+        emailField.value = savedProfile.email || '';
+        mobileField.value = savedProfile.mobile || '';
+        ageField.value = savedProfile.age || '';
+        heightField.value = savedProfile.height || '';
+        weightField.value = savedProfile.weight || '';
+
+        displayName.textContent = savedProfile.name || '';
+        displayEmail.textContent = savedProfile.email || '';
+        displayMobile.textContent = savedProfile.mobile || '';
+        displayAge.textContent = savedProfile.age || '';
+        displayHeight.textContent = savedProfile.height || '';
+        displayWeight.textContent = savedProfile.weight || '';
+
+        formDetails.style.display = 'block';
+        submitBtn.style.display = 'none';
+        formSection.style.display = 'none';
+        form.querySelectorAll('input').forEach(input => input.disabled = true);
+    }
+};
 
 // Handle form submission
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
+    // Save entered details to local storage
+    const profileData = {
+        name: nameField.value,
+        email: emailField.value,
+        mobile: mobileField.value,
+        age: ageField.value,
+        height: heightField.value,
+        weight: weightField.value
+    };
+    localStorage.setItem('profileData', JSON.stringify(profileData));
+
     // Display entered details
     displayName.textContent = nameField.value;
     displayEmail.textContent = emailField.value;
     displayMobile.textContent = mobileField.value;
+    displayAge.textContent = ageField.value;
     displayHeight.textContent = heightField.value;
     displayWeight.textContent = weightField.value;
-    displayAge.textContent = ageField.value;
 
     // Hide form inputs and submit button, show form details and edit button
     formDetails.style.display = 'block';
@@ -139,5 +175,4 @@ editBtn.addEventListener('click', function () {
     form.querySelectorAll('input').forEach(input => input.disabled = false);
 });
 // Profile Form End
-
 
