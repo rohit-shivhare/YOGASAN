@@ -1,0 +1,211 @@
+/* Root color theme */
+:root {
+    --primary-color: #bb9e59;          /* Primary color */
+    --primary-color-dark: #ffffff;     /* White color for text or backgrounds */
+    --text-dark: #1e293b;              /* Dark text color */
+    --text-light: #64748b;             /* Light text color */
+    --extra-light: #dfd7c5;            /* Extra light background or accents */
+    --white: #ffffff;                 /* Pure white color */
+    --max-width: 1200px;               /* Max width for containers */
+}
+
+/* General body and font setup */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background-color: var(--extra-light); */
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark); /* Dark text color */
+}
+
+/* Heading Styling */
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-dark); /* Dark text color */
+    text-decoration: underline;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Team Section Styles */
+#team {
+    padding: 60px 20px;
+    background-color: var(--white); /* White background */
+}
+
+/* Team container layout */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Team Member Card Styling */
+.team-member {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white); /* White background */
+    border-radius: 15px;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    background: linear-gradient(135deg, var(--primary-color), var(--extra-light)); /* Gradient background */
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover Effects on Member Card */
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    background-color: var(--extra-light); /* Lighter background on hover */
+    border: 3px solid var(--primary-color-dark); /* Border color on hover */
+}
+
+/* Adding an inner shadow to the card */
+.member-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.member-card:hover::after {
+    opacity: 1;
+}
+
+/* Image container with dynamic border on hover */
+.img-container {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 1px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Soft shadow around image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Image hover effect with smooth zoom */
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to zoom image and apply border-radius transition */
+.member-card:hover .img-container img {
+    transform: scale(1.1); /* Zoom effect on image */
+}
+
+.member-card:hover .img-container {
+    border-radius: 12px; /* Slightly rounded corners on hover */
+}
+
+/* Member Info Section */
+.member-info {
+    transition: transform 0.3s ease;
+    padding: 15px;
+}
+
+/* Name Styling */
+.member-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark); /* Dark text color for name */
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Position Styling */
+.member-info .position {
+    font-size: 1.2rem;
+    color: var(--primary-color); /* Primary color for position */
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slight text shadow */
+}
+
+/* Bio Styling */
+.member-info .bio {
+    font-size: 1rem;
+    color: var(--text-light); /* Light text color for bio */
+    line-height: 1.5;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Animation for fade-in effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on medium screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .team-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr 1fr; /* 2 columns for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+
+    h2 {
+        font-size: 2.5rem; /* Slightly smaller heading for mobile */
+    }
+}
