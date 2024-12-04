@@ -18,25 +18,19 @@ body {
     color: var(--text-dark); /* Dark text color */
 }
 
-/* Heading Styling */
 h2 {
-    text-align: center;
-    font-size: 3rem;
-    color: var(--text-dark); /* Dark text color */
-    text-decoration: underline;
-    margin-top: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 1px;
     position: relative;
     z-index: 2;
     animation: fadeIn 1s ease-in-out;
+    margin-bottom: 50px;
+    margin-top: -60px;
 }
 
 /* Team Section Styles */
 #team {
     padding: 60px 20px;
-    background-color: var(--white); /* White background */
+    background-color: var(--white); 
 }
 
 /* Team container layout */
@@ -65,7 +59,7 @@ h2 {
     text-align: center;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    background: linear-gradient(135deg, var(--primary-color), var(--extra-light)); /* Gradient background */
+    background: linear-gradient(135deg, var(--primary-color), var(--extra-light));
     position: relative;
     z-index: 1;
 }
