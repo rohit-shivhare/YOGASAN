@@ -606,7 +606,7 @@ header::before {
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
-    border-radius: 10px;
+    border-radius: 5px;
     transform: translateY(calc(50% + 2rem));
 }
 
