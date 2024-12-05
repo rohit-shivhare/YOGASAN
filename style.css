@@ -386,15 +386,18 @@ header::before {
 /* section-8  */
 .videoIframe {
     background-color: var(--extra-light);
-    h2{
+    height: 100%;
+    width: 100%;
+
+    h2 {
         margin-bottom: 50px;
     }
-    
+
     .videoFrame {
         display: flex;
         justify-content: center;
     }
-        
+
 }
 
 /* Footer  */
