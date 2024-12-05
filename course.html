@@ -11,66 +11,12 @@
 
     <!-- <script src="script.js" defer></script> -->
     <style>
-        :root {
-            --primary-color: #bb9e59;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        nav {
-            max-width: var(--max-width);
-            margin: auto;
-            padding: 2rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav__logo {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav__logo img {
-            max-width: 100px;
-        }
-
-        .nav__logo span {
-            font-size: 1.25rem;
-            color: var(--text-dark);
-        }
-
-        .nav__links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .link a {
-            padding: 5px;
-            color: var(--text-light);
-        }
-
-        .link a:hover {
-            color: var(--primary-color);
-        }
-
         .yoga-styles h1 {
             background-color: var(--extra-light);
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 10px;
         }
-
-
 
         .container {
             padding: 20px;
@@ -184,6 +130,7 @@
             margin-top: -80px;
             margin-bottom: 50px;
         }
+        
     </style>
 </head>
 
@@ -205,8 +152,8 @@
     </nav>
     <!-- Second Navigation Bar -->
     <nav class="secondary-nav">
-        <ul class="nav-links">
-            <li><a href="onlineClasses.html" style="color: var(--text-light);">Live Sessions</a></li>
+        <ul>
+            <li class="link"><a href="onlineClasses.html" style="color: var(--text-light);">Live Sessions</a></li>
         </ul>
     </nav>
 
