@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Slider - Fixed</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: flex-start; /* Keeps it aligned at the top */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+}
+
+.video-slider {
+    position: relative;
+    width: 80%; /* Set width as required */
+    max-width: 800px; /* Maximum width for the video slider */
+    height: 100%; /* Set height as per your requirement */
+     overflow: hidden; /*Ensures the cropped area is not visible */
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ensures the video fills the container */
+    flex-shrink: 0; /* Prevents videos from shrinking */
+    object-position: center bottom; /* Keeps the bottom part visible */
+}
+
+/* Navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Progress dots */
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="video-slider">
+        <div class="slider-wrapper">
+            <video src="video-1.mp4" muted></video>
+            <video src="video-2.mp4" muted></video>
+            <video src="video-3.mp4" muted></video>
+            <video src="video-4.mp4" muted></video>
+            <video src="video-5.mp4" muted></video>
+            <video src="video-6.mp4" muted></video>
+       
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="nav-btn prev-btn">&lt;</button>
+        <button class="nav-btn next-btn">&gt;</button>
+        <!-- Progress Dots -->
+        <div class="dots-container"></div>
+    </div>
+
+    <script>
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        const videos = document.querySelectorAll('video');
+        const dotsContainer = document.querySelector('.dots-container');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+        const intervalTime = 12000; // 12 seconds
+        let interval;
+
+        // Initialize dots
+        videos.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        });
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            // Pause the current video
+            videos[currentIndex].pause();
+            videos[currentIndex].currentTime = 0;
+
+            // Update slider position
+            sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+
+            // Play the next video
+            videos[currentIndex].play();
+        }
+
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            updateSlider();
+        }
+
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            updateSlider();
+        }
+
+        // Set up autoplay
+        function startAutoplay() {
+            interval = setInterval(nextVideo, intervalTime);
+        }
+
+        function stopAutoplay() {
+            clearInterval(interval);
+        }
+
+        // Add event listeners
+        nextBtn.addEventListener('click', () => {
+            stopAutoplay();
+            nextVideo();
+            startAutoplay();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoplay();
+            prevVideo();
+            startAutoplay();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoplay();
+                currentIndex = index;
+                updateSlider();
+                startAutoplay();
+            });
+        });
+
+        // Start autoplay on load
+        videos[currentIndex].play();
+        startAutoplay();
+    </script>
+</body>
+
+</html>
