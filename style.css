@@ -383,6 +383,20 @@ header::before {
     gap: 2rem;
 }
 
+/* section-8  */
+.videoIframe {
+    background-color: var(--extra-light);
+    h2{
+        margin-bottom: 50px;
+    }
+    
+    .videoFrame {
+        display: flex;
+        justify-content: center;
+    }
+        
+}
+
 /* Footer  */
 .footer {
     background-color: var(--primary-color);
