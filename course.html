@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoga Styles</title>
     <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <!-- <link rel="stylesheet" href="course.css"> -->
     <!-- <script src="script.js" defer></script> -->
     <style>
         :root {
@@ -63,8 +64,10 @@
         }
 
         .yoga-styles h1 {
-            background-color: var(--primary-color);
-            padding: 50px;
+            background-color: var(--extra-light);
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
 
 
@@ -75,6 +78,8 @@
 
         .yoga-styles {
             text-align: center;
+            padding: 50px;
+            background-color: var(--extra-light);
         }
 
         .styles-grid {
@@ -164,55 +169,6 @@
             background-color: #ddd;
             margin: 20px 0;
         }
-
-        .footer {
-            background-color: var(--primary-color);
-            padding: 1rem 1rem;
-
-        }
-
-        .footer__container {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 2rem;
-        }
-
-        .footer__logo a {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--white);
-        }
-
-        .footer__col p {
-            font-size: 1.25rem;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .footer__socials {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 1rem;
-        }
-
-        .footer__socials a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            aspect-ratio: 1;
-            font-size: 1.5rem;
-            color: var(--white);
-            background-color: #f7ebf330;
-            border-radius: 100%;
-        }
-
-        .footer__bar {
-            font-size: 0.9rem;
-            color: var(--white);
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -233,13 +189,13 @@
         </ul>
     </nav>
 
-    <section class="yoga-styles">
-        <h1>Yoga Styles</h1>
-        <div class="styles-grid">
+    <h1 class="section__header" style="margin-bottom: 50px;">Yoga Styles</h1>
 
+    <section class="yoga-styles">
+        <div class="styles-grid">
             <div class="style-card" onclick="showDetails('style1')">
                 <img src="assets/Tree pose.jpg" />
-                <h1>Vrikshasana (Tree Pose) : </h1>
+                <h1>Vrikshasana<br> (Tree Pose) : </h1>
                 <h3>Benefits of Vrikshasana</h3>
                 <h4>1. Improves Balance and Coordination: Vrikshasana helps to improve balance and coordination by
                     strengthening the muscles in the legs, ankles, and feet.</h4>
@@ -254,7 +210,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style2')">
                 <img src="assets/Cobra pose.jpg" />
-                <h1>Bhujangasana (Cobra Pose) :</h1>
+                <h1>Bhujangasana<br> (Cobra Pose) :</h1>
                 <h3>Benefits of Bhujangasana</h3>
                 <h4>1. Strengthens the Back Muscles: Bhujangasana strengthens the muscles in the back, including the
                     latissimus dorsi and trapezius.</h4>
@@ -268,7 +224,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style3')">
                 <img src="assets/Sun solutation pose.jpg" />
-                <h1>Surya Namaskar (Sun Salutation) :</h1>
+                <h1>Surya Namaskar<br> (Sun Salutation) :</h1>
                 <h3>Benefits of Surya Namaskar</h3>
                 <h4>1. Improves Flexibility: Surya Namaskar helps to improve flexibility in the entire body, including
                     the muscles, tendons, and ligaments.</h4>
@@ -282,7 +238,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style4')">
                 <img src="assets/Legs up the wall pose.jpg" />
-                <h1>Viparita Karani (Legs Up The Wall Pose) :</h1>
+                <h1>Viparita Karani<br> (Legs Up The Wall Pose) :</h1>
                 <h3>Benefits of Viparita Karani</h3>
                 <h4>1. Reduces Swelling in the Legs: Viparita Karani helps to reduce swelling in the legs and feet by
                     allowing gravity to drain excess fluids.</h4>
@@ -296,7 +252,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style5')">
                 <img src="assets/Bow pose.jpg" />
-                <h1>Dhanurasana (Bow Pose) :</h1>
+                <h1>Dhanurasana<br> (Bow Pose) :</h1>
                 <h3>Benefits of Dhanurasana</h3>
                 <h4>1. Strengthens the Back Muscles: Dhanurasana strengthens the muscles in the back, including the
                     latissimus dorsi and trapezius.</h4>
@@ -310,7 +266,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style6')">
                 <img src="assets/Corpse pose.jpg" />
-                <h1>Savasana (Corpse Pose) :</h1>
+                <h1>Savasana<br> (Corpse Pose) :</h1>
                 <h3>Benefits of Savasana</h3>
                 <h4>1. Reduces Stress and Anxiety: Savasana helps to reduce stress and anxiety by promoting relaxation
                     and calmness.</h4>
@@ -323,7 +279,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style7')">
                 <img src="assets/Standing forward pose.webp" />
-                <h1>Uttanasana (Standing Forward Fold) :</h1>
+                <h1>Uttanasana<br> (Standing Forward Fold) :</h1>
                 <h3>Benefits of Uttanasana</h3>
                 <h4>1. Stretches the Hamstrings, Calves, and Spine: Uttanasana stretches the muscles in the back of the
                     legs, calves, and spine.</h4>
@@ -337,7 +293,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style8')">
                 <img src="assets/Triangle pose.jpg" />
-                <h1>Trikonasana (Triangle Pose) :</h1>
+                <h1>Trikonasana<br> (Triangle Pose) :</h1>
                 <h3>Benefits of Trikonasana</h3>
                 <h4>1. Stretches the Hips, Thighs, and Spine: Trikonasana stretches the muscles in the hips, thighs, and
                     spine, improving flexibility and range of motion.</h4>
@@ -352,7 +308,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style9')">
                 <img src="assets/Warrior pose.jpeg" />
-                <h1>Virabhadrasana (Warrior Pose) :</h1>
+                <h1>Virabhadrasana<br> (Warrior Pose) :</h1>
                 <h3>Benefits of Virabhadrasana </h3>
                 <h4>1. Strengthens the Legs and Hips: Virabhadrasana strengthens the muscles in the legs and hips,
                     improving balance and stability.</h4>
@@ -367,7 +323,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style10')">
                 <img src="assets/Half moon pose.jpg" />
-                <h1>Ardha Chandrasana (Half Moon Pose) :</h1>
+                <h1>Ardha Chandrasana<br> (Half Moon Pose) :</h1>
                 <h3>Benefits of Ardha Chandrasana</h3>
                 <h4>1. Improves Balance and Coordination: Ardha Chandrasana improves balance and coordination by
                     challenging the body's balance and stability.</h4>
@@ -382,7 +338,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style11')">
                 <img src="assets/Bridge pose.jpg" />
-                <h1>Setu Bandha Sarvangasana (Bridge Pose) :</h1>
+                <h1>Setu Bandha Sarvangasana<br> (Bridge Pose) :</h1>
                 <h3>Benefits of Setu Bandha Sarvangasana</h3>
                 <h4>1. Strengthens the Back Muscles: Setu Bandha Sarvangasana strengthens the muscles in the back,
                     including the latissimus dorsi and trapezius.</h4>
@@ -396,7 +352,7 @@
             </div>
             <div class="style-card" onclick="showDetails('style12')">
                 <img src="assets/Downward Facing Dog.jpg" />
-                <h1>Adho Mukha Svanasana (Downward-Facing Dog):</h1>
+                <h1>Adho Mukha Svanasana<br> (Downward-Facing Dog):</h1>
                 <h3>Benefits of Adho Mukha Svanasana</h3>
                 <h4>1. Stretches the Hamstrings, Calves, and Spine: Adho Mukha Svanasana stretches the muscles in the
                     back of the legs, calves, and spine.</h4>
@@ -427,13 +383,15 @@
             </div>
         </div>
     </section>
+    <!-- Footer  -->
     <footer class="footer" id="contact">
-        <div class="section_container footer_container">
+        <div class="section__container footer__container">
             <div class="footer__col">
                 <div class="footer__logo"><a href="#">YOGASAN</a></div>
             </div>
             <div class="footer__col">
-                <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.</p>
+                <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.<br>Email:
+                    yogasan002@gmail.com</p>
             </div>
             <div class="footer__col">
                 <div class="footer__socials">
@@ -447,7 +405,6 @@
         <div class="footer__bar">
             Copyright © 2024 YOGASAN. All rights reserved.
         </div>
-
     </footer>
 
     <script>
