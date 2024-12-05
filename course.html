@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Styles</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+
+    <!-- <link rel="stylesheet" href="course.css"> -->
+    <!-- <script src="script.js" defer></script> -->
+    <style>
+        :root {
+            --primary-color: #bb9e59;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav__logo img {
+            max-width: 100px;
+        }
+
+        .nav__logo span {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .link a {
+            padding: 5px;
+            color: var(--text-light);
+        }
+
+        .link a:hover {
+            color: var(--primary-color);
+        }
+
+        .yoga-styles h1 {
+            background-color: var(--primary-color);
+            padding: 50px;
+        }
+
+
+
+        .container {
+            padding: 20px;
+        }
+
+        .yoga-styles {
+            text-align: center;
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .style-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .style-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .style-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .style-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .style-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .style-details.hidden {
+            display: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5c5c;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .video-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .play-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .play-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .image-placeholder img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            padding: 1rem 1rem;
+
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer__logo a {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--white);
+        }
+
+        .footer__col p {
+            font-size: 1.25rem;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer__socials {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .footer__socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            aspect-ratio: 1;
+            font-size: 1.5rem;
+            color: var(--white);
+            background-color: #f7ebf330;
+            border-radius: 100%;
+        }
+
+        .footer__bar {
+            font-size: 0.9rem;
+            color: var(--white);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav  -->
+    <nav>
+        <div class="nav__logo">
+            <img src="assets/logo.png" alt="logo" />
+            <span>YOGASAN</span>
+        </div>
+        <ul class="nav__links">
+            <li class="link"><a href="home.html">Home</a></li>
+            <li class="link"><a href="#">Classes</a></li>
+            <li class="link"><a href="membership.html">Membership</a></li>
+            <li class="link"><a href="members/team.html">About</a></li>
+            <li class="link"><a href="contact.html">Contact</a></li>
+            <li class="link"><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+
+    <section class="yoga-styles">
+        <h1>Yoga Styles</h1>
+        <div class="styles-grid">
+
+            <div class="style-card" onclick="showDetails('style1')">
+                <img src="assets/Tree pose.jpg" />
+                <h1>Vrikshasana (Tree Pose) : </h1>
+                <h3>Benefits of Vrikshasana</h3>
+                <h4>1. Improves Balance and Coordination: Vrikshasana helps to improve balance and coordination by
+                    strengthening the muscles in the legs, ankles, and feet.</h4>
+                <h4>2. Strengthens the Ankles and Calves: This pose helps to strengthen the muscles in the ankles and
+                    calves.</h4>
+                <h4>3. Improves Posture: Vrikshasana helps to improve posture by strengthening the muscles in the back
+                    and core.</h4>
+                <h4>4. Reduces Stress and Anxiety: This pose can help to reduce stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. Improves Focus and Concentration: Vrikshasana helps to improve focus and concentration by
+                    training the mind to stay present and focused.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style2')">
+                <img src="assets/Cobra pose.jpg" />
+                <h1>Bhujangasana (Cobra Pose) :</h1>
+                <h3>Benefits of Bhujangasana</h3>
+                <h4>1. Strengthens the Back Muscles: Bhujangasana strengthens the muscles in the back, including the
+                    latissimus dorsi and trapezius.</h4>
+                <h4>2. Improves Flexibility: This pose improves flexibility in the chest, shoulders, and upper back.
+                </h4>
+                <h4>3. Relieves Stress and Anxiety: Bhujangasana can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>4. Improves Posture: This pose can help improve posture by strengthening the muscles in the back and
+                    improving flexibility in the chest and shoulders.</h4>
+                <h4>5. Opens the Chest: Bhujangasana opens the chest and improves breathing capacity.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style3')">
+                <img src="assets/Sun solutation pose.jpg" />
+                <h1>Surya Namaskar (Sun Salutation) :</h1>
+                <h3>Benefits of Surya Namaskar</h3>
+                <h4>1. Improves Flexibility: Surya Namaskar helps to improve flexibility in the entire body, including
+                    the muscles, tendons, and ligaments.</h4>
+                <h4>2. Strengthens Muscles: This pose helps to strengthen the muscles in the arms, legs, and core.</h4>
+                <h4>3. Improves Balance and Coordination: Surya Namaskar helps to improve balance and coordination by
+                    challenging the body's balance and stability.</h4>
+                <h4>4. Relieves Stress and Anxiety: This pose can help to relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. Improves Circulation and Digestion: Surya Namaskar can help to improve circulation and digestion
+                    by stretching the muscles and improving blood flow.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style4')">
+                <img src="assets/Legs up the wall pose.jpg" />
+                <h1>Viparita Karani (Legs Up The Wall Pose) :</h1>
+                <h3>Benefits of Viparita Karani</h3>
+                <h4>1. Reduces Swelling in the Legs: Viparita Karani helps to reduce swelling in the legs and feet by
+                    allowing gravity to drain excess fluids.</h4>
+                <h4>2. Relaxes the Lower Back: This pose helps to relax the muscles in the lower back, reducing tension
+                    and stress.</h4>
+                <h4>3. Improves Circulation: Viparita Karani improves circulation by allowing blood to flow freely to
+                    the upper body.</h4>
+                <h4>4. Reduces Stress and Anxiety: This pose can help to reduce stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. Improves Sleep: Viparita Karani can help to improve sleep by relaxing the body and mind.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style5')">
+                <img src="assets/Bow pose.jpg" />
+                <h1>Dhanurasana (Bow Pose) :</h1>
+                <h3>Benefits of Dhanurasana</h3>
+                <h4>1. Strengthens the Back Muscles: Dhanurasana strengthens the muscles in the back, including the
+                    latissimus dorsi and trapezius.</h4>
+                <h4>2. Improves Flexibility: This pose improves flexibility in the chest, shoulders, and upper back.
+                </h4>
+                <h4>3. Opens the Chest: Dhanurasana opens the chest and improves breathing capacity.</h4>
+                <h4>4. Strengthens the Arms and Shoulders: This pose strengthens the muscles in the arms and shoulders.
+                </h4>
+                <h4>5. Improves Posture: Dhanurasana can help improve posture by strengthening the muscles in the back
+                    and improving flexibility in the chest and shoulders.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style6')">
+                <img src="assets/Corpse pose.jpg" />
+                <h1>Savasana (Corpse Pose) :</h1>
+                <h3>Benefits of Savasana</h3>
+                <h4>1. Reduces Stress and Anxiety: Savasana helps to reduce stress and anxiety by promoting relaxation
+                    and calmness.</h4>
+                <h4>2. Improves Sleep: This pose can help improve sleep by relaxing the body and mind.</h4>
+                <h4>3. Relaxes the Muscles: Savasana relaxes the muscles, reducing muscle tension and fatigue.</h4>
+                <h4>4. Improves Circulation: This pose improves circulation, which can help to reduce inflammation and
+                    promote healing.</h4>
+                <h4>5. Increases Self-Awareness: Savasana can help increase self-awareness by promoting relaxation and
+                    introspection.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style7')">
+                <img src="assets/Standing forward pose.webp" />
+                <h1>Uttanasana (Standing Forward Fold) :</h1>
+                <h3>Benefits of Uttanasana</h3>
+                <h4>1. Stretches the Hamstrings, Calves, and Spine: Uttanasana stretches the muscles in the back of the
+                    legs, calves, and spine.</h4>
+                <h4>2. Improves Flexibility: This pose improves flexibility in the hips, knees, and ankles.</h4>
+                <h4>3. Relieves Stress and Anxiety: Uttanasana can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>4. Improves Circulation: This pose improves circulation, which can help to reduce inflammation and
+                    promote healing.</h4>
+                <h4>5. Strengthens the Arms and Shoulders: Uttanasana strengthens the muscles in the arms and shoulders.
+                </h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style8')">
+                <img src="assets/Triangle pose.jpg" />
+                <h1>Trikonasana (Triangle Pose) :</h1>
+                <h3>Benefits of Trikonasana</h3>
+                <h4>1. Stretches the Hips, Thighs, and Spine: Trikonasana stretches the muscles in the hips, thighs, and
+                    spine, improving flexibility and range of motion.</h4>
+                <h4>2. Strengthens the Legs and Core: This pose strengthens the muscles in the legs and core, improving
+                    balance and stability.</h4>
+                <h4>3. Improves Circulation and Digestion: Trikonasana improves circulation and digestion by stretching
+                    the muscles and improving blood flow.</h4>
+                <h4>4. Relieves Stress and Anxiety: This pose can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. mproves Balance and Coordination: Trikonasana improves balance and coordination by challenging
+                    the body's balance and stability.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style9')">
+                <img src="assets/Warrior pose.jpeg" />
+                <h1>Virabhadrasana (Warrior Pose) :</h1>
+                <h3>Benefits of Virabhadrasana </h3>
+                <h4>1. Strengthens the Legs and Hips: Virabhadrasana strengthens the muscles in the legs and hips,
+                    improving balance and stability.</h4>
+                <h4>2. Stretches the Chest and Shoulders: This pose stretches the muscles in the chest and shoulders,
+                    improving flexibility and range of motion.</h4>
+                <h4>3. Improves Circulation and Digestion: Virabhadrasana improves circulation and digestion by
+                    stretching the muscles and improving blood flow.</h4>
+                <h4>4. Relieves Stress and Anxiety: This pose can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. Improves Balance and Coordination: Virabhadrasana improves balance and coordination by
+                    challenging the body's balance and stability.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style10')">
+                <img src="assets/Half moon pose.jpg" />
+                <h1>Ardha Chandrasana (Half Moon Pose) :</h1>
+                <h3>Benefits of Ardha Chandrasana</h3>
+                <h4>1. Improves Balance and Coordination: Ardha Chandrasana improves balance and coordination by
+                    challenging the body's balance and stability.</h4>
+                <h4>2. Stretches the Chest and Shoulders: This pose stretches the muscles in the chest and shoulders,
+                    improving flexibility and range of motion.</h4>
+                <h4>3. Strengthens the Legs and Hips: Ardha Chandrasana strengthens the muscles in the legs and hips,
+                    improving balance and stability.</h4>
+                <h4>4. Improves Circulation and Digestion: This pose improves circulation and digestion by stretching
+                    the muscles and improving blood flow.</h4>
+                <h4>5. Relieves Stress and Anxiety: Ardha Chandrasana can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style11')">
+                <img src="assets/Bridge pose.jpg" />
+                <h1>Setu Bandha Sarvangasana (Bridge Pose) :</h1>
+                <h3>Benefits of Setu Bandha Sarvangasana</h3>
+                <h4>1. Strengthens the Back Muscles: Setu Bandha Sarvangasana strengthens the muscles in the back,
+                    including the latissimus dorsi and trapezius.</h4>
+                <h4>2. Improves Flexibility: This pose improves flexibility in the chest, shoulders, and upper back.
+                </h4>
+                <h4>3. Opens the Chest: Setu Bandha Sarvangasana opens the chest and improves breathing capacity.</h4>
+                <h4>4. Strengthens the Glutes and Hamstrings: This pose strengthens the muscles in the glutes and
+                    hamstrings.</h4>
+                <h4>5. Improves Posture: Setu Bandha Sarvangasana can help improve posture by strengthening the muscles
+                    in the back and improving flexibility in the chest and shoulders.</h4>
+            </div>
+            <div class="style-card" onclick="showDetails('style12')">
+                <img src="assets/Downward Facing Dog.jpg" />
+                <h1>Adho Mukha Svanasana (Downward-Facing Dog):</h1>
+                <h3>Benefits of Adho Mukha Svanasana</h3>
+                <h4>1. Stretches the Hamstrings, Calves, and Spine: Adho Mukha Svanasana stretches the muscles in the
+                    back of the legs, calves, and spine.</h4>
+                <h4>2. Strengthens the Arms, Shoulders, and Core: This pose strengthens the muscles in the arms,
+                    shoulders, and core.</h4>
+                <h4>3. Improves Flexibility and Balance: Adho Mukha Svanasana improves flexibility and balance by
+                    stretching the muscles and challenging the body's balance.</h4>
+                <h4>4. Relieves Stress and Anxiety: This pose can help relieve stress and anxiety by promoting
+                    relaxation and calmness.</h4>
+                <h4>5. Improves Circulation and Digestion: Adho Mukha Svanasana can help improve circulation and
+                    digestion by stretching the muscles and improving blood flow.</h4>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="style-details hidden" id="details">
+        <button class="close-btn" onclick="hideDetails()">X</button>
+        <div class="details-content">
+            <div class="image-placeholder"></div>
+            <h2 id="style-name">Style Name</h2>
+            <p id="style-description">Description of the style</p>
+            <p id="style-benefits">Benefits of the style</p>
+            <div class="video-section">
+                <p>Or watch video:</p>
+                <button class="play-btn">▶ Watch Video</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contact">
+        <div class="section_container footer_container">
+            <div class="footer__col">
+                <div class="footer__logo"><a href="#">YOGASAN</a></div>
+            </div>
+            <div class="footer__col">
+                <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.</p>
+            </div>
+            <div class="footer__col">
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 YOGASAN. All rights reserved.
+        </div>
+
+    </footer>
+
+    <script>
+        const detailsSection = document.getElementById("details");
+        const styleName = document.getElementById("style-name");
+        const styleDescription = document.getElementById("style-description");
+        const styleBenefits = document.getElementById("style-benefits");
+
+
+        const yogaStylesData = {
+            style1: {
+                name: "Vrikshasana (Tree Pose) :",
+                description: "How to Practice Vrikshasana",
+                benefits: `
+        <h3>How to Practice Vrikshasana</h3>
+        
+      <ol>  
+        <li> Stand on One Leg: Stand on one leg, with the other foot resting against the inner thigh.</li>
+        <li> Engage Your Core: Engage your core muscles to support your spine and maintain balance.</li>
+        <li> Lengthen Your Spine: Lengthen your spine and keep your head in a neutral position.</li>
+        <li> Relax Your Shoulders: Relax your shoulders and keep your arms by your sides.</li>
+        <li> Breathe Naturally: Breathe naturally and smoothly, feeling the ground beneath your feet.</li>
+        <li> Switch Legs: Switch legs and repeat on the other side.</li>
+      </ol>
+      
+      <h3>Precautions and Contraindications</h3>
+         <ul>
+         <li> Injury or Surgery: Avoid practicing Vrikshasana if you have any injuries or have recently undergone surgery.</li>
+         <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Vrikshasana.</li>
+         <li> Pregnancy: Pregnant women should avoid practicing Vrikshasana, especially in the later stages of pregnancy.</li>
+         </ul>
+        `,
+                videoUrl: "https://www.youtube.com/shorts/ZmWQ4LeXxL4?feature=share"
+            },
+            style2: {
+                name: "Bhujangasana (Cobra Pose) :",
+                description: "How to Practice Bhujangasana.",
+                benefits: `
+    <h3>How to Practice Bhujangasana</h3>
+    
+    <ol>
+    <li> Lie on Your Stomach: Lie on your stomach with your hands under your shoulders and your elbows directly under your shoulders.</li>
+    <li> Inhale and Press Your Palms: Inhale and press your palms into the ground, lifting your chest and head off the ground.</li>
+    <li> Keep Your Shoulders Down: Keep your shoulders down and away from your ears.</li>
+    <li> Lengthen Your Spine: Lengthen your spine and keep your head in a neutral position.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your chest and shoulders.</li>
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Injury or Surgery: Avoid practicing Bhujangasana if you have any injuries or have recently undergone surgery.</li>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Bhujangasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Bhujangasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style3: {
+                name: "Surya Namaskar (Sun Salutation) :",
+                description: "How to Practice Surya Namaskar",
+                benefits: `
+    <h3>How to Practice Surya Namaskar</h3>
+    
+    <ol>
+    <li> Start in Mountain Pose: Start in Mountain Pose (Tadasana) with your feet hip-width apart and your arms by your sides.</li>
+    <li> Inhale and Stretch Your Arms Up: Inhale and stretch your arms up towards the ceiling, keeping them straight and parallel to each other.</li>
+    <li> Exhale and Fold Forward: Exhale and fold forward, keeping your knees slightly bent and your arms straight.</li>
+    <li> Inhale and Lengthen Your Spine: Inhale and lengthen your spine, keeping your arms straight and your legs slightly bent.</li>
+    <li> Exhale and Step Back into Plank Pose: Exhale and step back into Plank Pose (Phalakasana), keeping your arms straight and your legs slightly bent.</li>
+    <li> Inhale and Lift Your Hips Up: Inhale and lift your hips up towards the ceiling, keeping your arms and legs straight.</li>
+    <li> Exhale and Lower Your Hips Down: Exhale and lower your hips down towards the ground, keeping your arms and legs straight.</li>
+    <li> Inhale and Step Forward into Mountain Pose: Inhale and step forward into Mountain Pose (Tadasana), keeping your arms by your sides and your legs slightly bent.</li>
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Injury or Surgery: Avoid practicing Surya Namaskar if you have any injuries or have recently undergone surgery.</li>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Surya Namaskar.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Surya Namaskar, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style4: {
+                name: "Viparita Karani (Legs Up The Wall Pose) :",
+                description: "How to Practice Viparita Karani",
+                benefits: `
+    <h3>How to Practice Viparita Karani</h3>
+    
+    <ol>
+    <li> Find a Wall: Find a wall that is clear of any obstacles or furniture.</li>
+    <li> Lie on Your Back: Lie on your back with your legs straight up against the wall.</li>
+    <li> Relax Your Body: Relax your body and let your legs feel heavy against the wall.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the relaxation spread through your body.</li>
+    <li> Stay for 5-10 Minutes: Stay in the pose for 5-10 minutes, feeling the benefits of the pose.</li> 
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Viparita Karani.</li>
+    <li> High Blood Pressure: If you have high blood pressure, consult with your doctor or yoga therapist before practicing Viparita Karani.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Viparita Karani, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style5: {
+                name: "Dhanurasana (Bow Pose) :",
+                description: "How to Practice Dhanurasana",
+                benefits: `
+    <h3>How to Practice Dhanurasana</h3>
+
+    <ol>
+    <li> Lie on Your Stomach: Lie on your stomach with your hands under your shoulders and your elbows directly under your shoulders.</li>
+    <li> Bend Your Knees: Bend your knees and bring your heels towards your buttocks.</li>
+    <li> Hold Your Ankles: Hold your ankles with your hands, keeping your knees slightly apart.</li>
+    <li> Inhale and Lift Your Chest: Inhale and lift your chest and head off the ground, keeping your shoulders down and away from your ears.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your chest and shoulders.</li>
+    </ol>
+
+    <h3>Precautions and Contraindications</h3>
+    <ul> 
+    <li> Injury or Surgery: Avoid practicing Dhanurasana if you have any injuries or have recently undergone surgery</li>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Dhanurasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Dhanurasana, especially in the later stages of pregnancy.</li> 
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style6: {
+                name: "Savasana (Corpse Pose) :",
+                description: "How to practice Savasana",
+                benefits: `
+    <h3>How to practice Savasana </h3>
+    
+    <ol>
+    <li> Lie on Your Back: Lie on your back with your arms and legs relaxed and your eyes closed.</li>
+    <li> Relax Your Body: Relax your body, starting from your toes and moving up to the top of your head.</li>
+    <li> Focus on Your Breath: Focus on your breath, feeling the sensation of the air moving in and out of your body.</li>
+    <li> Let Go of Tension: Let go of any tension or stress, allowing yourself to relax and let go.</li>
+    <li> Stay for 5-10 Minutes: Stay in the pose for 5-10 minutes, feeling the benefits of relaxation and calmness.</li>
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Savasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Savasana, especially in the later stages of pregnancy</li>
+    <li> Insomnia: If you have insomnia, avoid practicing Savasana before bedtime, as it can make it difficult to fall asleep.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style7: {
+                name: "Uttanasana (Standing Forward Fold) :",
+                description: "How to practice Uttanasana",
+                benefits: `
+    <h3>How to practice Uttanasana</h3>
+    
+    <ol>
+    <li> Stand with Your Feet Hip-Width Apart: Stand with your feet hip-width apart and your arms by your sides.</li>
+    <li> Inhale and Lengthen Your Spine: Inhale and lengthen your spine, keeping your head in a neutral position.</li>
+    <li> Exhale and Fold Forward: Exhale and fold forward, keeping your knees slightly bent and your arms straight.</li>
+    <li> Keep Your Palms and Heels Grounded: Keep your palms and heels grounded and engage your core muscles to support your body.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your hamstrings, calves, and spine.</li>
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Uttanasana.</li>
+    <li> Knee Problems: If you have any knee problems, such as torn ligaments or knee pain, consult with your doctor or yoga therapist before practicing Uttanasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Uttanasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style8: {
+                name: "Trikonasana (Triangle Pose) :",
+                description: "How to practice Trikonasana",
+                benefits: `
+    <h3>How to practice Trikonasana</h3>
+    
+    <ol> 
+    <li> Stand with Your Feet Wide Apart: Stand with your feet wide apart, with one foot facing forward and the other foot at a 90-degree angle.</li>
+    <li> Reach Your Right Hand to the Ground: Reach your right hand to the ground, keeping your arm straight and your palm facing down.</li>
+    <li> Slide Your Left Hand Up Your Leg: Slide your left hand up your leg, keeping your arm straight and your palm facing forward.</li>
+    <li> Keep Your Spine Long and Straight: Keep your spine long and straight, engaging your core muscles to support your body.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your hips, thighs, and spine.</li>
+    </ol>
+    
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Trikonasana.</li>
+    <li> Knee Problems: If you have any knee problems, such as torn ligaments or knee pain, consult with your doctor or yoga therapist before practicing Trikonasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Trikonasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style9: {
+                name: "Virabhadrasana (Warrior Pose) :",
+                description: "How to practice Virabhadrasana",
+                benefits: `
+    <h3>How to practice Virabhadrasana</h3>
+    
+   <ol>
+   <li> Stand with Your Feet Wide Apart: Stand with your feet wide apart, with one foot facing forward and the other foot at a 90-degree angle.</li>
+   <li> Bend Your Front Knee: Bend your front knee, keeping your thigh parallel to the ground.</li>
+   <li> Stretch Your Arms Out to the Sides: Stretch your arms out to the sides, keeping them parallel to the ground.</li>
+   <li> Keep Your Spine Long and Straight: Keep your spine long and straight, engaging your core muscles to support your body.</li>
+   <li> Breathe Naturally: Breathe naturally and smoothly, feeling the strength and stretch in your legs, hips, and chest.</li>
+   </ol>
+   
+   <h3>Precautions and Contraindications</h3>
+   <ul>
+   <li> Knee Problems: If you have any knee problems, such as torn ligaments or knee pain, consult with your doctor or yoga therapist before practicing Virabhadrasana.</li>
+   <li> Hip Problems: If you have any hip problems, such as hip pain or arthritis, consult with your doctor or yoga therapist before practicing Virabhadrasana.</li>
+   <li> Pregnancy: Pregnant women should avoid practicing Virabhadrasana, especially in the later stages of pregnancy.</li>
+   </ul>
+   `,
+                videoUrl: ""
+            },
+            style10: {
+                name: "Ardha Chandrasana (Half Moon Pose) :",
+                description: "How to practice Ardha Chandrasana",
+                benefits: `
+    <h3>How to practice Ardha Chandrasana</h3>
+
+    <ol>
+    <li> Start in a Lunge Position: Start in a lunge position, with your right foot forward and your left foot back.</li>
+    <li> Reach Your Right Hand to the Ground: Reach your right hand to the ground, keeping your arm straight and your palm facing down.</li>
+    <li> Lift Your Left Leg Up: Lift your left leg up, keeping it straight and your foot flexed.</li>
+    <li> Keep Your Spine Long and Straight: Keep your spine long and straight, engaging your core muscles to support your body.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the balance and stretch in your body.</li>
+    </ol>
+
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Knee Problems: If you have any knee problems, such as torn ligaments or knee pain, consult with your doctor or yoga therapist before practicing Ardha Chandrasana.</li>
+    <li> Hip Problems: If you have any hip problems, such as hip pain or arthritis, consult with your doctor or yoga therapist before practicing Ardha Chandrasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Ardha Chandrasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style11: {
+                name: "Setu Bandha Sarvangasana (Bridge Pose) :",
+                description: "How to practice Setu Bandha Sarvangasana",
+                benefits: `
+    <h3>How to practice Setu Bandha Sarvangasana</h3>
+
+    <ol>
+    <li> Lie on Your Back: Lie on your back with your knees bent and your feet flat on the ground.</li>
+    <li> Place Your Arms at Your Sides: Place your arms at your sides, with your palms facing down.</li>
+    <li> Lift Your Hips Up: Lift your hips up, squeezing your glutes and pushing your heels towards the ground.</li>
+    <li> Keep Your Shoulders Down: Keep your shoulders down and away from your ears.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the strength and stretch in your back and chest.</li>
+    </ol>
+
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Setu Bandha Sarvangasana.</li>
+    <li> Neck Problems: If you have any neck problems, such as neck pain or arthritis, consult with your doctor or yoga therapist before practicing Setu Bandha Sarvangasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Setu Bandha Sarvangasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+            style12: {
+                name: "Adho Mukha Svanasana (Downward-Facing Dog):",
+                description: "How to practice Adho Mukha Svanasana",
+                benefits: `
+    <h3>How to practice Adho Mukha Svanasana</h3>
+
+    <ol>
+    <li> Start on All Fours: Start on all fours, with your hands shoulder-width apart and your knees directly under your hips.</li>
+    <li> Walk Your Hands Forward: Walk your hands forward a few inches and lift your hips up and back, straightening your arms and legs.</li>
+    <li> Keep Your Palms and Heels Grounded: Keep your palms and heels grounded and engage your core muscles to support your body.</li>
+    <li> Lengthen Your Spine: Lengthen your spine and keep your head in a neutral position.</li>
+    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your body.</li>
+    </ol>
+
+    <h3>Precautions and Contraindications</h3>
+    <ul>
+    <li> Injury or Surgery: Avoid practicing Adho Mukha Svanasana if you have any injuries or have recently undergone surgery.</li>
+    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Adho Mukha Svanasana.</li>
+    <li> Pregnancy: Pregnant women should avoid practicing Adho Mukha Svanasana, especially in the later stages of pregnancy.</li>
+    </ul>
+    `,
+                videoUrl: ""
+            },
+        };
+
+
+        function showDetails(styleKey) {
+            const style = yogaStylesData[styleKey];
+            if (style) {
+                styleName.innerText = style.name;
+                styleDescription.innerText = style.description;
+                styleBenefits.innerHTML = style.benefits;
+                detailsSection.classList.remove("hidden");
+            }
+        }
+
+
+        function hideDetails() {
+            detailsSection.classList.add("hidden");
+        }
+        // Add event listener to the play button
+        const playButton = document.querySelector(".play-btn");
+        playButton.addEventListener("click", () => {
+            const currentStyle = yogaStylesData[currentStyleKey];
+            if (currentStyle && currentStyle.videoUrl) {
+                window.open(currentStyle.videoUrl, "_blank"); // Open video in a new tab
+            } else {
+                alert("No video available for this style.");
+            }
+        });
+        function showDetails(styleKey) {
+            const style = yogaStylesData[styleKey];
+            if (style) {
+                currentStyleKey = styleKey; // Save the current style for reference
+                styleName.innerText = style.name;
+                styleDescription.innerText = style.description;
+                styleBenefits.innerHTML = style.benefits;
+                detailsSection.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>
