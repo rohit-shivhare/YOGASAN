@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Full-Page Profile</title>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
-  <link rel="stylesheet" href="profile.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile</title>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
+	<link rel="stylesheet" href="profile.css">
 </head>
+
 <body>
+    
   <div class="profile-container">
     <div class="profile-background"></div>
     <div class="profile-photo">
-      <img src="../members/teamPhoto/dummyProfile.png" alt="Profile Photo" class="profile-img">
+      <img src="../members/teamPhoto/dummyProfile.jpg" alt="Profile Photo" class="profile-img">
     </div>
     <div class="profile-details">
       <div class="detail"><b>Name:</b> <span id="name">Loading...</span></div>
@@ -21,8 +24,8 @@
       <div class="detail"><b>D.O.B:</b> <span id="dob">Loading...</span></div>
       <div class="detail"><b>Gender:</b> <span id="gender">Loading...</span></div>
       <div class="detail"><b>Country:</b> <span id="country">Loading...</span></div>
+      <button id="edit-button" class="edit-button">Edit Profile</button>
     </div>
-    <button id="edit-button" class="edit-button">Edit Profile</button>
     <div id="edit-modal" class="modal">
       <div class="modal-content">
         <span id="close-button" class="close">&times;</span>
