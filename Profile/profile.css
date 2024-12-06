@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #dfd7c5;
+    background-color: #bb9e59;
 }
 
 .profile-container {
@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: #dfd7c5;
+    background-color: #bb9e59;
     position: relative;
     margin-bottom: 100px;
 }
@@ -24,7 +24,7 @@ body {
     background-color: #846e15;
     background: url(../assets/yoga2.jpg) no-repeat center center;
     background-size: cover;
-    border-bottom: 5px solid #846e15;
+    border-bottom: 5px solid #dfd7c5;
 }
 
 .profile-photo {
@@ -34,51 +34,82 @@ body {
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 10%;
-    border: 5px solid #846e15;
+    border-radius: 30%; 
+    border: 5px solid #dfd7c5;
     object-fit: cover;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    background: black;
+    padding: 4px;
 }
+
 
 .profile-details {
+    background-color: #dfd7c5;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 180px;
+    padding-right: 20px;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 150px;
-    row-gap: 40px;
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
-    font-size: 26px;
+    column-gap: 50px;
+    row-gap: 20px;
+    width: 90%;
+    max-width: 800px;
+    font-size: 22px;
     margin-top: 50px;
-    margin-bottom: 40px
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
 }
 
+
 .profile-details span {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .detail {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between; /* Ensure equal space between label and value */
+    align-items: center; /* Align items vertically */
+}
+
+.detail b {
+    min-width: 120px; /* Set a fixed width for labels */
+    text-align: left; /* Align text to the left */
+    color: #846e15;
+}
+
+.detail span {
+    flex: 1; /* Ensure value takes remaining space */
+    text-align: left; /* Align text to the left for readability */
 }
 
 .detail-value {
     color: #000000;
 }
 
-b {
-    color: #846e15;
+.edit-button {
+    background: linear-gradient(45deg, #dca526, #bf8a06);
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-left: -20%;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 20%;
+    justify-self: center; /* Center the button horizontally */
+    grid-column: span 2; /* Make the button span both columns */
 }
 
-.edit-button {
-  padding: 10px 20px;
-  background-color: #846e15;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  margin: 10px 0;
+.edit-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, #bf8a06, #dca526);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 .modal {
   display: none;
@@ -97,6 +128,19 @@ b {
   padding: 20px;
   border-radius: 5px;
   width: max-content;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #edit-form {
@@ -159,28 +203,30 @@ b {
 }
 
 .social-icons a {
-    font-size: 36px;
+    font-size: 40px;
     color: #846e15;
     transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #c2159f;
-    transform: scale(1.2);
+    color: #4e0267;
+    transform: scale(1.2) rotate(10deg);
 }
 
 .premium-user {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to right, #4e0267, #c2159f);
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    background: linear-gradient(45deg, #c2159f, #4e0267);
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     animation: glow 2s infinite alternate;
+    letter-spacing: 1.2px;
+    width: 300px;
 }
+
 
 @keyframes glow {
     0% { box-shadow: 0 5px 15px rgba(224, 207, 166, 0.4); }
