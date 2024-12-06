@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dfd7c5;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #dfd7c5;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.profile-background {
+    width: 100%;
+    height: 240px;
+    background-color: #846e15;
+    background: url(../assets/yoga2.jpg) no-repeat center center;
+    background-size: cover;
+    border-bottom: 5px solid #846e15;
+}
+
+.profile-photo {
+    margin-top: -120px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    border: 5px solid #846e15;
+    object-fit: cover;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 150px;
+    row-gap: 40px;
+    width: 80%;
+    max-width: 700px;
+    text-align: left;
+    font-size: 26px;
+    margin-top: 50px;
+    margin-bottom: 40px
+}
+
+.profile-details span {
+    font-size: 20px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail-value {
+    color: #000000;
+}
+
+b {
+    color: #846e15;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  background-color: #846e15;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #f5f0e1;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: max-content;
+}
+
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+#edit-form label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #846e15;
+}
+
+#edit-form input[type="text"],
+#edit-form input[type="email"],
+#edit-form input[type="date"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 94%;
+    margin-bottom: 10px;
+}
+
+#edit-form button {
+    background-color: #846e15;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 150px; /* Set a fixed width for the button */
+    align-self: center; /* Center the button horizontally */
+    margin-top: 15px;
+}
+
+#edit-form button:hover {
+    background-color: #6c550f;
+}
+
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: darkred;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.social-icons a {
+    font-size: 36px;
+    color: #846e15;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #c2159f;
+    transform: scale(1.2);
+}
+
+.premium-user {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #4e0267, #c2159f);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 5px 15px rgba(224, 207, 166, 0.4); }
+    100% { box-shadow: 0 10px 30px rgba(224, 207, 166, 0.8); }
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .detail {
+        justify-content: space-evenly;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .premium-user {
+        font-size: 20px;
+    }
+    #edit-form {
+        width: 250px;
+    }
+}

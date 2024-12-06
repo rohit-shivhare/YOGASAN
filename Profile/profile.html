@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Full-Page Profile</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-background"></div>
+    <div class="profile-photo">
+      <img src="../members/teamPhoto/dummyProfile.png" alt="Profile Photo" class="profile-img">
+    </div>
+    <div class="profile-details">
+      <div class="detail"><b>Name:</b> <span id="name">Loading...</span></div>
+      <div class="detail"><b>Email:</b> <span id="email">Loading...</span></div>
+      <div class="detail"><b>Phone:</b> <span id="phone">Loading...</span></div>
+      <div class="detail"><b>D.O.B:</b> <span id="dob">Loading...</span></div>
+      <div class="detail"><b>Gender:</b> <span id="gender">Loading...</span></div>
+      <div class="detail"><b>Country:</b> <span id="country">Loading...</span></div>
+    </div>
+    <button id="edit-button" class="edit-button">Edit Profile</button>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-button" class="close">&times;</span>
+        <h2>Edit Profile</h2>
+        <form id="edit-form">
+          <label for="edit-name">Name:</label>
+          <input type="text" id="edit-name" name="name" required>
+          <label for="edit-email">Email:</label>
+          <input type="email" id="edit-email" name="email" required>
+          <label for="edit-phone">Phone:</label>
+          <input type="text" id="edit-phone" name="phone" required>
+          <label for="edit-dob">D.O.B:</label>
+          <input type="date" id="edit-dob" name="dob" required>
+          <label for="edit-gender">Gender:</label>
+          <input type="text" id="edit-gender" name="gender" required>
+          <label for="edit-country">Country:</label>
+          <input type="text" id="edit-country" name="country" required>
+          <button type="submit">Save Changes</button>
+        </form>        
+      </div>
+    </div>
+    <div class="social-icons"> 
+      <a href="#"><i class='bx bxl-instagram'></i></a> 
+      <a href="#"><i class='bx bxl-facebook'></i></a> 
+      <a href="#"><i class='bx bxl-github'></i></a> 
+      <a href="#"><i class='bx bxl-linkedin'></i></a> 
+    </div>   
+    <div class="premium-user">Premium User</div> 
+  </div>  
+  <script src="profile.js"></script>
+</body>
+</html>
