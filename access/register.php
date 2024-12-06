@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = "sql201.infinityfree.com";
-$dbname = "if0_37800644_profile";
-$user = "if0_37800644";
-$pass = "h1xAuBfpYD";
+$host = "sql306.infinityfree.com";
+$dbname = "if0_37839418_yogasan";
+$user = "if0_37839418";
+$pass = "YOGJGUNI";
 $port = 3306;
 
 // Establish database connection
@@ -35,6 +35,7 @@ if ($result->num_rows > 0) {
 
     if ($stmt->execute()) {
         echo "Registration successful!";
+        echo "<script>alert('Registration Successfull!'); window.history.back();</script>";
         header("Location: access.html");
     } else {
         echo "Error: " . $stmt->error;
