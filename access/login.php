@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = "sql306.infinityfree.com"; // Change if hosted remotely
-$dbname = "if0_37839418_Yogasan"; 
-$user = "if0_37839418"; // Your database username
-$pass = "YOGJGUNI"; // Your database password
+$host = "sql201.infinityfree.com";
+$dbname = "if0_37800644_profile";
+$user = "if0_37800644";
+$pass = "h1xAuBfpYD";
 $port = 3306;
 
 // Establish database connection
@@ -31,15 +31,16 @@ if ($result->num_rows > 0) {
     // Plain text password comparison
     if ($password === $user['password']) {
         session_start();
-        $_SESSION['username'] = $username;
-        echo "<script>alert('Login Successful!');</script>";
-        header("Location: ../home.html"); // Redirect to home page
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        echo "Login successful!";
+        header("Location: ../Home/home.html"); // Redirect to home page
         exit;
     } else {
-        echo "<script>alert('Incorrect Password!');</script>";
+        echo "Incorrect password!";
     }
 } else {
-    echo "<script>alert('User not found!');</script>";
+    echo "User not found!";
 }
 
 // Close connection
