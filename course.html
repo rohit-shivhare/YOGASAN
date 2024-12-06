@@ -2,148 +2,148 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Styles</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yoga Styles</title>
+	<link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <!-- <script src="script.js" defer></script> -->
-    <style>
-        .yoga-styles h1 {
-            background-color: var(--extra-light);
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+	<!-- <script src="script.js" defer></script> -->
+	<style>
+		.yoga-styles h1 {
+			background-color: var(--extra-light);
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+		}
 
-        .container {
-            padding: 20px;
-        }
+		.container {
+			padding: 20px;
+		}
 
-        .yoga-styles {
-            text-align: center;
-            padding: 50px;
-            background-color: var(--extra-light);
-        }
+		.yoga-styles {
+			text-align: center;
+			padding: 50px;
+			background-color: var(--extra-light);
+		}
 
-        .styles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
+		.styles-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 40px;
+			margin-top: 20px;
+		}
 
-        .style-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+		.style-card {
+			background-color: #f9f9f9;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			padding: 20px;
+			text-align: center;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
 
-        .style-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+		.style-card img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
 
-        .style-card h2 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+		.style-card h2 {
+			font-size: 18px;
+			margin: 10px 0;
+		}
 
-        .style-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+		.style-card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+		}
 
-        .style-details {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 50px;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-        }
+		.style-details {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: white;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			padding: 50px;
+			max-width: 600px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			z-index: 10;
+		}
 
-        .style-details.hidden {
-            display: none;
-        }
+		.style-details.hidden {
+			display: none;
+		}
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff5c5c;
-            border: none;
-            color: white;
-            border-radius: 50%;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: #ff5c5c;
+			border: none;
+			color: white;
+			border-radius: 50%;
+			padding: 5px 10px;
+			cursor: pointer;
+		}
 
-        .video-section {
-            text-align: center;
-            margin-top: 20px;
-        }
+		.video-section {
+			text-align: center;
+			margin-top: 20px;
+		}
 
-        .play-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+		.play-btn {
+			background-color: #007bff;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
 
-        .play-btn:hover {
-            background-color: #0056b3;
-        }
+		.play-btn:hover {
+			background-color: #0056b3;
+		}
 
-        .image-placeholder img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
+		.image-placeholder img {
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+			background-color: #ddd;
+			margin: 20px 0;
+		}
 
-        /* Styling for the Second Navigation Bar */
-        .secondary-nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: flex-end;
-            /* Aligns the navigation to the right */
-            border-radius: 10px;
-        }
+		/* Styling for the Second Navigation Bar */
+		.secondary-nav ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: flex-end;
+			/* Aligns the navigation to the right */
+			border-radius: 10px;
+		}
 
-        .secondary-nav {
-            display: block;
-            margin-top: -80px;
-            margin-bottom: 50px;
-        }
+		.secondary-nav {
+			display: block;
+			margin-top: -80px;
+			margin-bottom: 50px;
+		}
 
-        .cardDetail {
-            padding: 10px;
-            color: var(--text-light);
-        }
-    </style>
+		.cardDetail {
+			padding: 10px;
+			color: var(--text-light);
+		}
+	</style>
 </head>
 
 <body>
-    <!-- Nav  -->
-    <nav>
-        <div class="nav__logo">
-            <a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
+	<!-- Nav  -->
+	<nav>
+		<div class="nav__logo">
+			<a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
             <span>YOGASAN</span>
         </div>
         <ul class="nav__links">
@@ -174,6 +174,7 @@
                     posture that symbolizes balance, stability, and rootedness, much like a tree. It helps in
                     strengthening the legs, improving focus, and enhancing overall body balance.
                 </p>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style2')">
@@ -183,6 +184,7 @@
                     mimics the posture of a cobra with its hood raised. It is part of the traditional Surya Namaskar
                     (Sun Salutation) sequence and is known for its therapeutic benefits for the spine and mental health.
                 </p>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style3')">
@@ -193,6 +195,7 @@
                     combines asanas, pranayama (breathing), and meditation, making it a holistic practice for the body,
                     mind, and soul.
                 </p>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style4')">
@@ -202,6 +205,7 @@
                     that promotes relaxation, improves circulation, and rejuvenates the mind and body. It is a gentle
                     inversion that is accessible to practitioners of all levels.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style5')">
@@ -211,6 +215,7 @@
                     bow, with the body forming the curve and the arms acting as the bowstring. This dynamic pose
                     strengthens the spine, stimulates digestion, and boosts energy levels.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style6')">
@@ -221,6 +226,7 @@
                     poses. Despite its simplicity, it is a profound practice for calming the mind and rejuvenating the
                     body.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style7')">
@@ -230,6 +236,7 @@
                     involves bending forward from the hips and allowing the upper body to hang over the legs. This pose
                     deeply stretches the hamstrings and spine while promoting relaxation and introspection.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style8')">
@@ -239,6 +246,7 @@
                     strengthens and stretches the entire body. Named after the triangular shape formed by the pose,
                     Trikonasana enhances stability, flexibility, and focus.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style9')">
@@ -248,6 +256,7 @@
                     yoga posture that builds strength, stability, and focus. It is named after the mythical warrior
                     Virabhadra and symbolizes courage and determination.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style10')">
@@ -257,6 +266,7 @@
                     combines strength, stability, and grace. The posture resembles a crescent moon and challenges both
                     physical and mental equilibrium while enhancing flexibility and focus.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style11')">
@@ -267,6 +277,7 @@
                     is often used as a preparatory posture for deeper backbends and is beneficial for both restorative
                     and active yoga practices.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
             <div class="style-card" onclick="showDetails('style12')">
@@ -277,6 +288,7 @@
                     the entire body, promoting flexibility, circulation, and a sense of grounding. This pose is often
                     used as a transitional pose between other asanas in a flow.
                 </P>
+                <p><b>Click To Read More...</b></p>
             </div>
 
         </div>
@@ -326,6 +338,7 @@
         const styleName = document.getElementById("style-name");
         const styleDescription = document.getElementById("style-description");
         const styleBenefits = document.getElementById("style-benefits");
+        let currentStyleKey = null;
 
 
         const yogaStylesData = {
@@ -379,22 +392,21 @@
                 description: "How to Practice Surya Namaskar",
                 benefits: `
     <br>
-    <ol>
-    <li> Start in Mountain Pose: Start in Mountain Pose (Tadasana) with your feet hip-width apart and your arms by your sides.</li>
-    <li> Inhale and Stretch Your Arms Up: Inhale and stretch your arms up towards the ceiling, keeping them straight and parallel to each other.</li>
-    <li> Exhale and Fold Forward: Exhale and fold forward, keeping your knees slightly bent and your arms straight.</li>
-    <li> Inhale and Lengthen Your Spine: Inhale and lengthen your spine, keeping your arms straight and your legs slightly bent.</li>
-    <li> Exhale and Step Back into Plank Pose: Exhale and step back into Plank Pose (Phalakasana), keeping your arms straight and your legs slightly bent.</li>
-    <li> Inhale and Lift Your Hips Up: Inhale and lift your hips up towards the ceiling, keeping your arms and legs straight.</li>
-    <li> Exhale and Lower Your Hips Down: Exhale and lower your hips down towards the ground, keeping your arms and legs straight.</li>
-    <li> Inhale and Step Forward into Mountain Pose: Inhale and step forward into Mountain Pose (Tadasana), keeping your arms by your sides and your legs slightly bent.</li>
-    </ol>
-    <br>
-    <h3>Precautions and Contraindications</h3><br>
-    <ul>
-    <li> Injury or Surgery: Avoid practicing Surya Namaskar if you have any injuries or have recently undergone surgery.</li>
-    <li> Back Problems: If you have any back problems, such as herniated discs or spinal stenosis, consult with your doctor or yoga therapist before practicing Surya Namaskar.</li>
-    <li> Pregnancy: Pregnant women should avoid practicing Surya Namaskar, especially in the later stages of pregnancy.</li>
+    <ol> 
+    <li> Begin in Mountain Pose (Tadasana): Stand tall with your feet hip-width apart and arms by your sides.</li> 
+    <li> Inhale and Raise Arms: Stretch your arms upward, keeping them straight and parallel to each other.</li> 
+    <li> Exhale and Fold Forward: Bend forward, keeping your knees slightly bent and arms straight.</li> 
+    <li> Inhale and Extend Spine: Lengthen your spine while keeping arms straight and knees slightly bent.</li> 
+    <li> Exhale and Step Back to Plank: Step back into Plank Pose, keeping your body straight and core engaged.</li> 
+    <li> Inhale and Lift Hips: Raise your hips towards the ceiling, forming an inverted V-shape with your body.</li> 
+    <li> Exhale and Lower Hips: Lower your hips closer to the ground, maintaining straight arms and legs.</li> 
+    <li> Inhale and Step Forward: Step forward to return to Mountain Pose, keeping your body aligned and knees slightly bent.</li> 
+    </ol> <br> 
+    <h3>Precautions and Contraindications</h3> <br> 
+    <ul> 
+    <li> Injury or Surgery: Avoid Surya Namaskar if you have any injuries or have recently undergone surgery.</li> 
+    <li> Back Issues: Consult a doctor if you have back problems like herniated discs or spinal stenosis.</li> 
+    <li> Pregnancy: Pregnant women, especially in later stages, should avoid Surya Namaskar.</li> 
     </ul>
     `,
                 videoUrl: "https://youtu.be/yunARv9Kn54?si=exCTvuG9WM5wj9jT"
@@ -598,18 +610,6 @@
                 videoUrl: "https://youtu.be/6Ep5VzGqDRU?si=yx3wmDU3R9wuld7S"
             },
         };
-
-
-        function showDetails(styleKey) {
-            const style = yogaStylesData[styleKey];
-            if (style) {
-                styleName.innerText = style.name;
-                styleDescription.innerText = style.description;
-                styleBenefits.innerHTML = style.benefits;
-                detailsSection.classList.remove("hidden");
-            }
-        }
-
 
         function hideDetails() {
             detailsSection.classList.add("hidden");
