@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = "sql201.infinityfree.com";
-$dbname = "if0_37800644_profile";
-$user = "if0_37800644";
-$pass = "h1xAuBfpYD";
+$host = "sql306.infinityfree.com";
+$dbname = "if0_37839418_yogasan";
+$user = "if0_37839418";
+$pass = "YOGJGUNI";
 $port = 3306;
 
 // Establish database connection
@@ -33,14 +33,15 @@ if ($result->num_rows > 0) {
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        echo "Login successful!";
-        header("Location: ../Home/home.html"); // Redirect to home page
+        header("Location: ../home.html"); // Redirect to home page
         exit;
     } else {
-        echo "Incorrect password!";
+        echo "<script>alert('Incorrect password!'); window.history.back();</script>";
+        exit;
     }
 } else {
-    echo "User not found!";
+    echo "<script>alert('User not found!'); window.history.back();</script>";
+    exit;
 }
 
 // Close connection
