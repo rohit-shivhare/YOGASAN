@@ -70,3 +70,4 @@ loginPassword.addEventListener('input', function() {
     loginPassword.setCustomValidity("");
   }
 });
+
