@@ -183,7 +183,7 @@
                 // If already clicked, disable the button and display the stored date
                 document.getElementById("showDateBtn").disabled = true;
                 const clickedDate = localStorage.getItem("clickedDate");
-                document.getElementById("dateDisplay").innerText = `You clicked on: ${clickedDate}`;
+                document.getElementById("dateDisplay").innerText = `${clickedDate}`;
             }
         }
         // Initialize the state on page load
