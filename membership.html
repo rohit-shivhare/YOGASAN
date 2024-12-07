@@ -36,7 +36,8 @@
                 <hr>
                 <p>Basic Membership</p>
                 <p>No Charges</p>
-                <p>Starting date:<br>dd/mm/yyyy</p>
+                <p>Starting date:</p>
+                <p id="dateDisplay"></p>
             </div>
             <div class="hero__card">
                 <h4>Benefits of this Membership</h4>
@@ -76,7 +77,7 @@
                     <p>Basic Communtity Access</p>
                     <p>1 Live session</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-1" onclick="Activate()">GET STARTED</button>
+                    <button class="btn membership__btn btn-1" onclick="Activate()" id="showDateBtn">GET STARTED</button>
                 </div>
                 <div class="membership__card">
                     <h4>Monthly Membership</h4>
@@ -87,7 +88,8 @@
                     <p>5-10 Live session</p>
                     <p>Book a group class</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-2"><a href="https://rzp.io/rzp/EQIQfj1e">GET STARTED</a></button>
+                    <button class="btn membership__btn btn-2"><a href="https://rzp.io/rzp/EQIQfj1e">GET
+                            STARTED</a></button>
                 </div>
                 <div class="membership__card">
                     <h4>Annual Membership</h4>
@@ -99,7 +101,8 @@
                     <p>Group trainer</p>
                     <p>Book a group class</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-3"><a href="https://rzp.io/rzp/MxqkhDw">GET STARTED</a></button>
+                    <button class="btn membership__btn btn-3"><a href="https://rzp.io/rzp/MxqkhDw">GET
+                            STARTED</a></button>
                 </div>
                 <div class="membership__card">
                     <h4>Premium Membership</h4>
@@ -111,7 +114,8 @@
                     <p>Group trainer</p>
                     <p>Exclusive Workshops</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-4"><a href="https://rzp.io/rzp/95lpV0K">GET STARTED</a></button>
+                    <button class="btn membership__btn btn-4"><a href="https://rzp.io/rzp/95lpV0K">GET
+                            STARTED</a></button>
                 </div>
             </div>
         </div>
@@ -148,9 +152,30 @@
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
 
     <script>
+
         function Activate() {
             alert("Activate Successfully!!");
         }
+   
+        // Function to display the current date
+        function displayDate() {
+            const currentDate = new Date(); // Get the current date
+            const formattedDate = currentDate.toDateString(); // Format the date as a readable string
+            document.getElementById("dateDisplay").innerText = formattedDate; // Update the paragraph
+        }
+        // Function to initialize date display and auto-update
+        function initializeDate() {
+            // Display the date immediately
+            displayDate();
+
+            // Set interval to auto-update the date every 24 hours (86,400,000 milliseconds)
+            setInterval(displayDate, 24 * 60 * 60 * 1000);
+
+            // Disable the button after the first click
+            document.getElementById("showDateBtn").disabled = true;
+        }
+        // Attach event listener to the button
+        document.getElementById("showDateBtn").addEventListener("click", initializeDate);
     </script>
 
 </body>
