@@ -343,9 +343,31 @@
     <!-- Scroll-to-Top Button -->
     <button id="scrollToTopBtn" title="Go to top">↑</button>
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
-    <script src="main.js"></script>
 
     <script>
+
+        // ScrollToTop Button
+        // Get the button element
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // Show or hide the button based on scroll position
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block"; // Show button
+            } else {
+                scrollToTopBtn.style.display = "none"; // Hide button
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        scrollToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // Smooth scroll effect
+            });
+        };
+
+
         const detailsSection = document.getElementById("details");
         const styleName = document.getElementById("style-name");
         const styleDescription = document.getElementById("style-description");
