@@ -2,59 +2,109 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile</title>
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
-	<link rel="stylesheet" href="profile.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    
-  <div class="profile-container">
-    <div class="profile-background"></div>
-    <div class="profile-photo">
-      <img src="../members/teamPhoto/dummyProfile.jpg" alt="Profile Photo" class="profile-img">
+
+  <!-- Nav  -->
+  <nav>
+    <div class="nav__logo">
+      <img src="../assets/logo.png" alt="logo" />
+      <span>YOGASAN</span>
     </div>
-    <div class="profile-details">
-      <div class="detail"><b>Name:</b> <span id="name">Loading...</span></div>
-      <div class="detail"><b>Email:</b> <span id="email">Loading...</span></div>
-      <div class="detail"><b>Phone:</b> <span id="phone">Loading...</span></div>
-      <div class="detail"><b>D.O.B:</b> <span id="dob">Loading...</span></div>
-      <div class="detail"><b>Gender:</b> <span id="gender">Loading...</span></div>
-      <div class="detail"><b>Country:</b> <span id="country">Loading...</span></div>
-      <button id="edit-button" class="edit-button">Edit Profile</button>
+    <ul class="nav__links">
+      <li class="link"><a href="../home.html">Home</a></li>
+      <li class="link"><a href="../course.html">Course</a></li>
+      <li class="link"><a href="../membership.html">Membership</a></li>
+      <li class="link"><a href="../members/team.html">About</a></li>
+      <li class="link"><a href="../contact.html">Contact</a></li>
+      <li class="link"><a href="profile.html">Profile</a></li>
+      <li class="link"><a href="../home.html"><img src="../assets/logout.png " class="logout" /></a></li>
+    </ul>
+  </nav>
+  <section class="profile">
+    <div class="profile-container">
+      <div class="profile-background"></div>
+      <div class="profile-photo">
+        <img src="../members/teamPhoto/dummyProfile.jpg" alt="Profile Photo" class="profile-img">
+      </div>
+      <div class="profile-details">
+        <div class="detail"><b>Name:</b> <span id="name">Loading...</span></div>
+        <div class="detail"><b>Email:</b> <span id="email">Loading...</span></div>
+        <div class="detail"><b>Phone:</b> <span id="phone">Loading...</span></div>
+        <div class="detail"><b>D.O.B:</b> <span id="dob">Loading...</span></div>
+        <div class="detail"><b>Gender:</b> <span id="gender">Loading...</span></div>
+        <div class="detail"><b>Country:</b> <span id="country">Loading...</span></div>
+        <button id="edit-button" class="edit-button">Edit Profile</button>
+      </div>
+      <div id="edit-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-button" class="close">&times;</span>
+          <h2>Edit Profile</h2>
+          <form id="edit-form">
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name" name="name" required>
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" name="email" required>
+            <label for="edit-phone">Phone:</label>
+            <input type="text" id="edit-phone" name="phone" required>
+            <label for="edit-dob">D.O.B:</label>
+            <input type="date" id="edit-dob" name="dob" required>
+            <label for="edit-gender">Gender:</label>
+            <input type="text" id="edit-gender" name="gender" required>
+            <label for="edit-country">Country:</label>
+            <input type="text" id="edit-country" name="country" required>
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+      </div>
+      <div class="premium-user">Premium User</div>
     </div>
-    <div id="edit-modal" class="modal">
-      <div class="modal-content">
-        <span id="close-button" class="close">&times;</span>
-        <h2>Edit Profile</h2>
-        <form id="edit-form">
-          <label for="edit-name">Name:</label>
-          <input type="text" id="edit-name" name="name" required>
-          <label for="edit-email">Email:</label>
-          <input type="email" id="edit-email" name="email" required>
-          <label for="edit-phone">Phone:</label>
-          <input type="text" id="edit-phone" name="phone" required>
-          <label for="edit-dob">D.O.B:</label>
-          <input type="date" id="edit-dob" name="dob" required>
-          <label for="edit-gender">Gender:</label>
-          <input type="text" id="edit-gender" name="gender" required>
-          <label for="edit-country">Country:</label>
-          <input type="text" id="edit-country" name="country" required>
-          <button type="submit">Save Changes</button>
-        </form>        
+  </section>
+  <hr>
+  <!-- Footer  -->
+  <footer class="footer" id="contact">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo"><a href="#">YOGASAN</a></div>
+      </div>
+      <div class="footer__col">
+        <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.<br>Email:
+          yogasan002@gmail.com</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__socials">
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class='bx bxl-instagram'></i></a>
+          <a href="#"><i class="bx bxl-youtube"></i></a>
+        </div>
       </div>
     </div>
-    <div class="social-icons"> 
-      <a href="#"><i class='bx bxl-instagram'></i></a> 
-      <a href="#"><i class='bx bxl-facebook'></i></a> 
-      <a href="#"><i class='bx bxl-github'></i></a> 
-      <a href="#"><i class='bx bxl-linkedin'></i></a> 
-    </div>   
-    <div class="premium-user">Premium User</div> 
-  </div>  
+    <div class="footer__bar">
+      Copyright © 2024 YOGASAN. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
   <script src="profile.js"></script>
+  <script src="../main.js"></script>
 </body>
+
 </html>

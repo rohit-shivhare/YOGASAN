@@ -4,7 +4,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #bb9e59;
+    /* background-color: #bb9e59; */
+}
+
+.profile {
+    background-color: var(--primary-color);
 }
 
 .profile-container {
@@ -15,7 +19,7 @@ body {
     height: 100%;
     background-color: #bb9e59;
     position: relative;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 .profile-background {
@@ -225,6 +229,7 @@ body {
     animation: glow 2s infinite alternate;
     letter-spacing: 1.2px;
     width: 300px;
+    margin-bottom: 100px;
 }
 
 
