@@ -18,7 +18,8 @@
       <img src="assets/logo.png" alt="logo" />
       <span>YOGASAN</span>
     </div>
-    <ul class="nav__links">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav__links" id="nav-links">
       <li class="link"><a href="#home">Home</a></li>
       <li class="link"><a href="#classes">Classes</a></li>
       <li class="link"><a href="#membership">Membership</a></li>
@@ -258,6 +259,17 @@
 
   <script src="index.js"></script>
   <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+  
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+  
+
 </body>
 
 </html>

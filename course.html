@@ -2,151 +2,152 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Yoga Styles</title>
-	<link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
-	<link rel="stylesheet" href="style.css">
-	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Styles</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-	<!-- <script src="script.js" defer></script> -->
-	<style>
-		.yoga-styles h1 {
-			background-color: var(--extra-light);
-			padding: 10px;
-			margin-bottom: 20px;
-			border-radius: 10px;
-			margin-top: 20px;
-		}
+    <!-- <script src="script.js" defer></script> -->
+    <style>
+        .yoga-styles h1 {
+            background-color: var(--extra-light);
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-		.container {
-			padding: 20px;
-		}
+        .container {
+            padding: 20px;
+        }
 
-		.yoga-styles {
-			text-align: center;
-			padding: 50px;
-			background-color: var(--extra-light);
-		}
+        .yoga-styles {
+            text-align: center;
+            padding: 50px;
+            background-color: var(--extra-light);
+        }
 
-		.styles-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 40px;
-			margin-top: 20px;
-		}
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 20px;
+        }
 
-		.style-card {
-			background-color: #f9f9f9;
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			padding: 20px;
-			text-align: center;
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-		}
+        .style-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-		.style-card img {
-			width: 100%;
-			height: auto;
-			border-radius: 8px;
-		}
+        .style-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-		.style-card h2 {
-			font-size: 18px;
-			margin: 10px 0;
-		}
+        .style-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
 
-		.style-card:hover {
-			transform: scale(1.05);
-			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-		}
+        .style-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-		.style-details {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background: white;
-			border: 1px solid #ddd;
-			border-radius: 10px;
-			padding: 50px;
-			max-width: 600px;
-			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-			z-index: 10;
-		}
+        .style-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 50px;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
 
-		.style-details.hidden {
-			display: none;
-		}
+        .style-details.hidden {
+            display: none;
+        }
 
-		.close-btn {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			background: #ff5c5c;
-			border: none;
-			color: white;
-			border-radius: 50%;
-			padding: 5px 10px;
-			cursor: pointer;
-		}
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5c5c;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-		.video-section {
-			text-align: center;
-			margin-top: 20px;
-		}
+        .video-section {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-		.play-btn {
-			background-color: #007bff;
-			color: white;
-			border: none;
-			padding: 10px 20px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
+        .play-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-		.play-btn:hover {
-			background-color: #0056b3;
-		}
+        .play-btn:hover {
+            background-color: #0056b3;
+        }
 
-		.image-placeholder img {
-			height: 100%;
-			width: 100%;
-			border-radius: 50%;
-			background-color: #ddd;
-			margin: 20px 0;
-		}
+        .image-placeholder img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
 
-		/* Styling for the Second Navigation Bar */
-		.secondary-nav ul {
-			list-style-type: none;
-			display: flex;
-			justify-content: flex-end;
-			/* Aligns the navigation to the right */
-			border-radius: 10px;
-		}
+        /* Styling for the Second Navigation Bar */
+        .secondary-nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            /* Aligns the navigation to the right */
+            border-radius: 10px;
+        }
 
-		.secondary-nav {
-			display: block;
-			margin-top: -80px;
-			margin-bottom: 50px;
-		}
+        .secondary-nav {
+            display: block;
+            margin-top: -80px;
+            margin-bottom: 50px;
+        }
 
-		.cardDetail {
-			padding: 10px;
-			color: var(--text-light);
-		}
-	</style>
+        .cardDetail {
+            padding: 10px;
+            color: var(--text-light);
+        }
+    </style>
 </head>
 
 <body>
-	<!-- Nav  -->
-	<nav>
-		<div class="nav__logo">
-			<a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
+    <!-- Nav  -->
+    <nav>
+        <div class="nav__logo">
+            <a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
             <span>YOGASAN</span>
         </div>
-        <ul class="nav__links">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav__links" id="nav-links">
             <li class="link"><a href="home.html">Home</a></li>
             <li class="link"><a href="#">Course</a></li>
             <li class="link"><a href="membership.html">Membership</a></li>

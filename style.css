@@ -108,6 +108,46 @@ nav {
     color: var(--primary-color);
 }
 
+/* Hamburger menu hidden by default */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px;
+        margin-right: 20px;
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .link a {
+        color: var(--white);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav__links {
+        display: none;
+    }
+}
+
 /* Nav END  */
 
 /* Section-1  */
