@@ -641,3 +641,7 @@ header::before {
 .logout {
     height: 20px;
 }
+
+.membership__card a {
+    color: white;
+}
