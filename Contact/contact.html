@@ -2,222 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" href="style.css">
-    <title>YOGASAN | Contact | Feedback</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <style>
-        .faq__container {
-            background-color: var(--extra-light);
-        }
-
-        .faq-container {
-            max-width: 1000px;
-            margin: 50px auto;
-        }
-
-        #faq {
-            max-width: 100%;
-        }
-
-        .faq-item {
-            margin-bottom: 10px;
-            /* Add space between questions */
-        }
-
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 15px;
-            background: none;
-            /* Remove background color */
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            color: #333;
-            outline: none;
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            background-color: var(--primary-color-dark);
-        }
-
-        .faq-question:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 15px;
-            background: #f1f1f1;
-            font-size: 14px;
-            color: var(--text-light);
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: -10px;
-            /* Pull answer closer to question */
-        }
-
-        .faq-arrow {
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-arrow.rotate {
-            transform: rotate(90deg);
-        }
-
-        .contact {
-            margin-top: 50px;
-            margin-bottom: 50px;
-
-            .contact-form {
-                margin-top: 50px;
-            }
-        }
-
-        .feedback {
-            background-color: var(--extra-light);
-            padding: 50px;
-        }
-
-        .feedback-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            margin-top: 50px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .form-group textarea {
-            height: 100px;
-            resize: none;
-        }
-
-        .rating {
-            display: flex;
-            gap: 5px;
-            margin: 10px 0;
-        }
-
-        .rating button {
-            font-size: 24px;
-            background: none;
-            border: none;
-            color: #ccc;
-            /* Default color */
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .rating button.active {
-            color: #f39c12;
-            /* Highlighted color */
-        }
-
-        .submit-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .feedback-list {
-            max-width: 800px;
-            margin: 20px auto 0;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: none;
-            margin-bottom: 50px;
-        }
-
-        .feedback-item {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
-            position: relative;
-        }
-
-        .feedback-item:last-child {
-            border-bottom: none;
-        }
-
-        .feedback-item .stars {
-            color: #f39c12;
-        }
-
-        .delete-btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            background: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .delete-btn:hover {
-            background: #c0392b;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="Stylesheet" href="contact.css">
+	<title>YOGASAN | Contact | Feedback</title>
+	<link rel="icon" type="image/x-icon" href="../Assets/logo-web.jpg">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+	<script src="https://unpkg.com/scrollreveal">
+	</script>
 </head>
 
 <body>
-    <!-- Nav  -->
+	<!-- Nav  -->
     <nav>
-        <div class="nav__logo">
-            <a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
+        <a href="../Home/home.html">
+          <div class="nav__logo">
+            <img src="../Assets/logo.png" alt="logo"/>
             <span>YOGASAN</span>
-        </div>
+          </div>
+        </a>
         <div class="hamburger" id="hamburger">&#9776;</div>
         <ul class="nav__links" id="nav-links">
-            <li class="link"><a href="home.html">Home</a></li>
-            <li class="link"><a href="course.html">Course</a></li>
-            <li class="link"><a href="membership.html">Membership</a></li>
-            <li class="link"><a href="members/team.html">About</a></li>
-            <li class="link"><a href="#contact">Contact</a></li>
-            <li class="link"><a href="Profile/profile.html">Profile</a></li>
+            <li class="close-btn" id="close-btn">&times;</li>
+            <li class="link" title="Home-Page"><a href="../Home/home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="link" id="dropdown-toggle">Classes <span style="font-size: 13px;">&#9660;</span></a>
+                <ul class="dropdown-menu">
+                  <li class="link" title="Courses"><a href="../Course/course.html">Courses</a></li>
+                  <li class="link" title="Live Sessions"><a href="../Course/onlineClasses.html">Live Session</a></li>
+                </ul>
+              </li>
+            <li class="link" title="Membership"><a href="../Membership/membership.html">Membership</a></li>
+            <li class="link" title="Contact us"><a href="../Contact/contact.html">Contact Us</a></li>
+            <li class="link" title="Your Profile"><a href="../Profile/profile.html">Profile</a></li>
+            <li class="link" title="Meet Our Team"><a href="../Members/team.html">Our Team</a></li>
+            <li class="link" title="Log-out"><a href="../index.html"><img src="../Assets/logout.png " class="logout" alt="Log-out"/></a></li>
         </ul>
     </nav>
 
@@ -446,157 +265,10 @@
     <!-- Scroll-to-Top Button -->
     <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-    <!-- Frequently Asked Question -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const faqItems = document.querySelectorAll(".faq-item");
-
-            faqItems.forEach((item) => {
-                const question = item.querySelector(".faq-question");
-                const answer = item.querySelector(".faq-answer");
-                const arrow = item.querySelector(".faq-arrow");
-
-                question.addEventListener("click", () => {
-                    // Close all other answers and reset arrows
-                    faqItems.forEach((otherItem) => {
-                        const otherAnswer = otherItem.querySelector(".faq-answer");
-                        const otherArrow = otherItem.querySelector(".faq-arrow");
-                        if (otherItem !== item) {
-                            otherAnswer.style.display = "none";
-                            otherArrow.classList.remove("rotate");
-                        }
-                    });
-
-                    // Toggle the current answer and arrow
-                    const isVisible = answer.style.display === "block";
-                    answer.style.display = isVisible ? "none" : "block";
-                    arrow.classList.toggle("rotate", !isVisible);
-                });
-            });
-        });
-    </script>
     <!-- Main JavaScript  -->
-    <script src="main.js"></script>
+    <script src="contact.js"></script>
     <!-- Chatbot  -->
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
-    <!-- Feedback Form & Local Storage  -->
-    <script>
-        // Selected rating value, default is 1
-        let selectedRating = 1;
-
-        // Get all rating stars
-        const stars = document.querySelectorAll('#rating button');
-
-        // Event listener for rating stars
-        stars.forEach((star, index) => {
-            star.addEventListener('click', function () {
-                // Set the selected rating value based on the clicked star
-                selectedRating = this.getAttribute('data-value');
-
-                // Reset all stars to inactive
-                stars.forEach(s => s.classList.remove('active'));
-
-                // Set stars up to the selected one as active
-                for (let i = 0; i <= index; i++) {
-                    stars[i].classList.add('active');
-                }
-            });
-        });
-
-        // Get references to feedback container and feedback list
-        const feedbackContainer = document.getElementById('feedbackContainer');
-        const feedbackList = document.getElementById('feedbackList');
-        const feedbackHeader = document.getElementById('feedbackHeader');
-
-        // Function to load feedbacks from localStorage
-        function loadFeedbacks() {
-            // Get feedbacks from localStorage or initialize an empty array
-            const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-
-            // If no feedbacks exist, hide the feedback container
-            if (feedbacks.length === 0) {
-                feedbackContainer.style.display = 'none';
-                feedbackHeader.style.display = 'none';
-            } else {
-                // Otherwise, show the feedback container
-                feedbackContainer.style.display = 'block';
-                feedbackHeader.style.display = 'block';
-                feedbackList.innerHTML = ''; // Clear current feedbacks in the UI
-
-                // Loop through each feedback and display it
-                feedbacks.forEach((feedback, index) => {
-                    const feedbackItem = document.createElement('div');
-                    feedbackItem.classList.add('feedback-item');
-                    feedbackItem.innerHTML = `
-                        <p>Name:&nbsp; <strong>${feedback.name}</strong><br>Email:&nbsp; ${feedback.email}</p>
-                        <p class="stars">${'★'.repeat(feedback.rating)}</p>
-                        <p>Feedback:&nbsp; ${feedback.feedback}</p>
-                        <button class="delete-btn" data-index="${index}">Delete</button>
-                    `;
-                    feedbackList.appendChild(feedbackItem);
-                });
-
-                // Add delete functionality to each delete button
-                const deleteButtons = document.querySelectorAll('.delete-btn');
-                deleteButtons.forEach(button => {
-                    button.addEventListener('click', function () {
-                        // Get the index of the feedback to delete
-                        const index = this.getAttribute('data-index');
-
-                        // Show confirmation message
-                        const confirmDelete = confirm("Are you sure you want to delete this feedback?");
-
-                        // If the user confirms, delete the feedback
-                        if (confirmDelete) {
-                            feedbacks.splice(index, 1); // Remove feedback from the array
-                            localStorage.setItem('feedbacks', JSON.stringify(feedbacks)); // Update localStorage
-                            loadFeedbacks(); // Reload feedback list in the UI
-                            alert("Feedback deleted successfully."); // Show success message
-                        }
-                    });
-                });
-            }
-        }
-
-        // Initial load of feedbacks from localStorage
-        loadFeedbacks();
-
-        // Add event listener for the feedback form submission
-        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Get form field values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const feedbackText = document.getElementById('feedback').value.trim();
-
-            // Get feedbacks from localStorage or initialize an empty array
-            const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-
-            // Add new feedback to the array
-            feedbacks.push({ name, email, rating: selectedRating, feedback: feedbackText });
-
-            // Save updated feedbacks array back to localStorage
-            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
-
-            // Reload feedbacks to update the UI
-            loadFeedbacks();
-
-            // Reset the form
-            this.reset();
-
-            // Reset the selected rating to the default (1)
-            selectedRating = 1;
-
-            // Reset the stars' active states
-            stars.forEach(s => s.classList.remove('active'));
-
-            // Show a thank-you message
-            alert(`Thank you, ${name}! Your feedback has been submitted.`);
-        });
-    </script>
-
-
+    
 </body>
-
 </html>

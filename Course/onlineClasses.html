@@ -6,96 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOGASAN | LIVE CLASS</title>
     <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="onlineClasses.css">
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-    <style>
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            background-color: var(--extra-light);
-            padding: 50px;
-        }
-
-        .card {
-            height: 450px;
-            width: 320px;
-            margin: 20px;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(to top, #bb9e59, transparent);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .card-title {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .card-benefit {
-            font-size: 1.2em;
-            color: #2f2e2e;
-            margin-bottom: 10px;
-        }
-
-        .schedule {
-            font-size: 1em;
-            color: BLACK;
-            margin-bottom: 15px;
-        }
-
-        .join-button {
-            padding: 15px 25px;
-            background-color: var(--extra-light);
-            border: none;
-            color: black;
-            font-size: 1.2em;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-        }
-
-        .join-button:hover {
-            background-color: #c2b18a;
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
 
+    <!-- Nav  -->
     <nav>
-        <ul class="nav__links">
-            <li class="link"><a href="course.html"><img src="assets/exit.png " class="exit"
-                        style="height: 30px; width:30px;" /></a></li>
+        <a href="../Home/home.html">
+        <div class="nav__logo">
+            <img src="../Assets/logo.png" alt="logo"/>
+            <span>YOGASAN</span>
+        </div>
+        </a>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav__links" id="nav-links">
+            <li class="close-btn" id="close-btn">&times;</li>
+            <li class="link" title="Home-Page"><a href="../Home/home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="link" id="dropdown-toggle">Classes <span style="font-size: 13px;">&#9660;</span></a>
+                <ul class="dropdown-menu">
+                <li class="link" title="Courses"><a href="../Course/course.html">Courses</a></li>
+                <li class="link" title="Live Sessions"><a href="../Course/onlineClasses.html">Live Session</a></li>
+                </ul>
+            </li>
+            <li class="link" title="Membership"><a href="../Membership/membership.html">Membership</a></li>
+            <li class="link" title="Contact us"><a href="../Contact/contact.html">Contact Us</a></li>
+            <li class="link" title="Your Profile"><a href="../Profile/profile.html">Profile</a></li>
+            <li class="link" title="Meet Our Team"><a href="../Members/team.html">Our Team</a></li>
+            <li class="link" title="Log-out"><a href="../index.html"><img src="../Assets/logout.png " class="logout" alt="Log-out"/></a></li>
         </ul>
     </nav>
-    <h1 class="section__header" style="margin-bottom: 50px; margin-top:-60px">Live Yoga Sessions</h1>
+
+    <h1 class="section__header" style="margin-bottom: 50px; margin-top:10px">Live Yoga Sessions</h1>
     <div class="container">
         <div class="card">
             <img src="https://www.kelownayogahouse.org/wp-content/uploads/2024/05/Hatha-yoga-photo-collage.jpg"
@@ -210,7 +155,7 @@
     <!-- Scroll-to-Top Button -->
     <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-    <script src="main.js"></script>
+    <script src="course.js"></script>
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
 
 </body>

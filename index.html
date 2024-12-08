@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,24 +8,21 @@
   <link rel="stylesheet" href="index.css" />
   <script src="https://unpkg.com/scrollreveal"></script>
   <title>YOGASAN</title>
-  <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+  <link rel="icon" type="image/x-icon" href="Assets/logo-web.jpg">
 </head>
-
 <body>
-  <nav>
+  <nav class="sticky">
     <div class="nav__logo">
-      <img src="assets/logo.png" alt="logo" />
+      <img src="Assets/logo.png" alt="logo" />
       <span>YOGASAN</span>
     </div>
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav__links" id="nav-links">
+      <li class="close-btn" id="close-btn">&times;</li>
       <li class="link"><a href="#home">Home</a></li>
       <li class="link"><a href="#classes">Classes</a></li>
       <li class="link"><a href="#membership">Membership</a></li>
-      <li class="link"><a href="#stories">About</a></li>
-      <li class="link"><a href="#posts">Blog</a></li>
-      <li class="link"><a href="#contact">Contact</a></li>
-      <li class="link"><a href="Access/access.html">Login/Signup</a></li>
+      <li class="link"><a href="Access/access.html" style="color: rgb(242, 242, 242); background-color: #46b71c; border-radius: 7px; padding: 5px 13px;">Login/Signup</a></li>
     </ul>
   </nav>
 
@@ -39,7 +35,7 @@
         <button class="btn gologin-btn">1 Week free trial</button>
       </div>
       <div class="header__image">
-        <img src="assets/header-img.png" alt="header" />
+        <img src="Assets/header-img.png" alt="header" />
       </div>
     </div>
   </header>
@@ -47,7 +43,7 @@
   <!-- Section-2  -->
   <section class="section__container why__container">
     <div class="why__image">
-      <img src="assets/why.jpg" alt="why yoga" />
+      <img src="Assets/why.jpg" alt="why yoga" />
     </div>
     <div class="why__content">
       <h2 class="section__header">Why You Should Try Yoga</h2>
@@ -85,14 +81,14 @@
   <section class="hero" id="hero">
     <div class="section__container hero__container">
       <div class="hero__card">
-        <span><img src="assets/icon-1.png" alt="hero" /></span>
+        <span><img src="Assets/icon-1.png" alt="hero" /></span>
         <h4>Holistic Lifestyle</h4>
         <p>
           Achieve physical vitality and inner peace by embracing the transformative practice of yoga.
         </p>
       </div>
       <div class="hero__card">
-        <span><img src="assets/icon-2.png" alt="hero" /></span>
+        <span><img src="Assets/icon-2.png" alt="hero" /></span>
         <h4>Body & Mind Harmony</h4>
         <p>
           Yoga fosters a strong, flexible body through purposeful poses, while mindful breathing nurtures inner peace
@@ -100,7 +96,7 @@
         </p>
       </div>
       <div class="hero__card">
-        <span><img src="assets/icon-3.png" alt="hero" /></span>
+        <span><img src="Assets/icon-3.png" alt="hero" /></span>
         <h4>Meditative Serenity</h4>
         <p>
           Experience profound calm and mindfulness through meditation, cultivating a deeper connection with the present
@@ -108,7 +104,7 @@
         </p>
       </div>
       <div class="hero__card">
-        <span><img src="assets/icon-4.png" alt="hero" /></span>
+        <span><img src="Assets/icon-4.png" alt="hero" /></span>
         <h4>Elevate Self-Care</h4>
         <p>
           Unlock the transformative benefits of self-care through yoga, embracing moments of peace and mindfulness.
@@ -123,37 +119,37 @@
     <h2 class="section__header">Determine Your Level & Path</h2>
     <div class="classes__grid">
       <div class="classes__image">
-        <img src="assets/classes-1.jpg" alt="classes" />
+        <img src="Assets/classes-1.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
       </div>
       <div class="classes__image">
-        <img src="assets/classes-2.jpg" alt="classes" />
+        <img src="Assets/classes-2.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
       </div>
       <div class="classes__image">
-        <img src="assets/classes-3.jpg" alt="classes" />
+        <img src="Assets/classes-3.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
       </div>
       <div class="classes__image">
-        <img src="assets/classes-4.jpg" alt="classes" />
+        <img src="Assets/classes-4.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
       </div>
       <div class="classes__image">
-        <img src="assets/classes-5.jpg" alt="classes" />
+        <img src="Assets/classes-5.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
       </div>
       <div class="classes__image">
-        <img src="assets/classes-6.jpg" alt="classes" />
+        <img src="Assets/classes-6.jpg" alt="classes" />
         <div class="classes__content">
           <button class="btn classes__btn gologin-btn">View More</button>
         </div>
@@ -228,6 +224,8 @@
       </div>
     </div>
   </section>
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
 
   <!-- Section-7  -->
   <!-- Footer  -->
@@ -254,22 +252,8 @@
     </div>
   </footer>
 
-  <!-- Scroll-to-Top Button -->
-  <button id="scrollToTopBtn" title="Go to top">↑</button>
-
   <script src="index.js"></script>
   <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
-
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-  
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
-  
-
 </body>
 
 </html>

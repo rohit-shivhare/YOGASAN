@@ -1,355 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Styles</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-    <!-- <script src="script.js" defer></script> -->
-    <style>
-        .yoga-styles h1 {
-            background-color: var(--extra-light);
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .yoga-styles {
-            text-align: center;
-            padding: 50px;
-            background-color: var(--extra-light);
-        }
-
-        .styles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .style-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .style-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .style-card h2 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .style-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .style-details {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 50px;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-        }
-
-        .style-details.hidden {
-            display: none;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff5c5c;
-            border: none;
-            color: white;
-            border-radius: 50%;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .video-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .play-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .play-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .image-placeholder img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
-
-        /* Styling for the Second Navigation Bar */
-        .secondary-nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: flex-end;
-            /* Aligns the navigation to the right */
-            border-radius: 10px;
-        }
-
-        .secondary-nav {
-            display: block;
-            margin-top: -80px;
-            margin-bottom: 50px;
-        }
-
-        .cardDetail {
-            padding: 10px;
-            color: var(--text-light);
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Nav  -->
-    <nav>
-        <div class="nav__logo">
-            <a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
-            <span>YOGASAN</span>
-        </div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav__links" id="nav-links">
-            <li class="link"><a href="home.html">Home</a></li>
-            <li class="link"><a href="#">Course</a></li>
-            <li class="link"><a href="membership.html">Membership</a></li>
-            <li class="link"><a href="members/team.html">About</a></li>
-            <li class="link"><a href="contact.html">Contact</a></li>
-            <li class="link"><a href="Profile/profile.html">Profile</a></li>
-        </ul>
-    </nav>
-    <!-- Second Navigation Bar -->
-    <nav class="secondary-nav">
-        <ul>
-            <li class="link"><a href="onlineClasses.html" style="color: var(--text-light);">Live Sessions</a></li>
-        </ul>
-    </nav>
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const closeBtn = document.getElementById('close-btn');
 
 
-    <h1 class="section__header" style="margin-bottom: 50px; margin-top:-50px">Yoga Styles</h1>
-    <section class="yoga-styles">
-        <div class="styles-grid">
-
-            <div class="style-card" onclick="showDetails('style1')">
-                <img src="assets/yogaStyle-1.jpg" />
-                <h1>VRIKSHASANA<br> (TREE POSE) </h1>
-                <p class="cardDetail Detail-1">Vrikshasana, also known as the Tree Pose, is a classic standing yoga
-                    posture that symbolizes balance, stability, and rootedness, much like a tree. It helps in
-                    strengthening the legs, improving focus, and enhancing overall body balance.
-                </p>
-                <br><br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style2')">
-                <img src="assets/yogaStyle-2.jpg" />
-                <h1>BHUJANGASANA<br> (COBRA POSE) </h1>
-                <p class="cardDetail Detail-2">Bhujangasana, or Cobra Pose, is a rejuvenating backbend in yoga that
-                    mimics the posture of a cobra with its hood raised. It is part of the traditional Surya Namaskar
-                    (Sun Salutation) sequence and is known for its therapeutic benefits for the spine and mental health.
-                </p>
-                <br><br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style3')">
-                <img src="assets/yogaStyle-3.jpg" />
-                <h1>SURYA NAMASKAR<br> (SUN SALUTATION) </h1>
-                <p class="cardDetail Detail-3">Surya Namaskar, or Sun Salutation, is a dynamic sequence of 12 yoga poses
-                    performed in a flowing sequence to offer gratitude to the sun, the source of life and energy. It
-                    combines asanas, pranayama (breathing), and meditation, making it a holistic practice for the body,
-                    mind, and soul.
-                </p>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style4')">
-                <img src="assets/yogaStyle-4.jpg" />
-                <h1>VIPARITA KARANI<br> (LEGS UP THE WALL POSE) </h1>
-                <P class="cardDetail Detail-4">Viparita Karani, or Legs Up the Wall Pose, is a restorative yoga posture
-                    that promotes relaxation, improves circulation, and rejuvenates the mind and body. It is a gentle
-                    inversion that is accessible to practitioners of all levels.
-                </P>
-                <br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style5')">
-                <img src="assets/yogaStyle-5.jpg" />
-                <h1>DHANURASANA<br> (BOW POSE) </h1>
-                <P class="cardDetail Detail-5">Dhanurasana, or Bow Pose, is a deep backbend that resembles a stretched
-                    bow, with the body forming the curve and the arms acting as the bowstring. This dynamic pose
-                    strengthens the spine, stimulates digestion, and boosts energy levels.
-                </P>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style6')">
-                <img src="assets/yogaStyle-6.jpg" />
-                <h1>SAVASANA<br> (CORPSE POSE) </h1>
-                <P class="cardDetail Detail-6">Savasana, or Corpse Pose, is a restorative yoga posture often practiced
-                    at the end of a session to promote deep relaxation and integrate the benefits of the preceding
-                    poses. Despite its simplicity, it is a profound practice for calming the mind and rejuvenating the
-                    body.
-                </P>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style7')">
-                <img src="assets/yogaStyle-7.jpg" />
-                <h1>UTTANASANA<br> (STANDING FORWARD FOLD) </h1>
-                <P class="cardDetail Detail-7">Uttanasana, or Standing Forward Fold, is a foundational yoga pose that
-                    involves bending forward from the hips and allowing the upper body to hang over the legs. This pose
-                    deeply stretches the hamstrings and spine while promoting relaxation and introspection.
-                </P>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style8')">
-                <img src="assets/yogaStyle-8.jpg" />
-                <h1>TRIKONASANA<br> (TRIANGLE POSE) </h1>
-                <P class="cardDetail Detail-8">Trikonasana, or Triangle Pose, is a classic standing yoga posture that
-                    strengthens and stretches the entire body. Named after the triangular shape formed by the pose,
-                    Trikonasana enhances stability, flexibility, and focus.
-                </P>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style9')">
-                <img src="assets/yogaStyle-9.jpg" />
-                <h1>VRIABHADRASANA<br> (WARRIOR POSE) </h1>
-                <P class="cardDetail Detail-9">Virabhadrasana, or Warrior Pose, is a dynamic and empowering standing
-                    yoga posture that builds strength, stability, and focus. It is named after the mythical warrior
-                    Virabhadra and symbolizes courage and determination.
-                </P>
-                <br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style10')">
-                <img src="assets/yogaStyle-10.jpg" />
-                <h1>ARDHA CHANDRASANA<br> (HALF MOON POSE) </h1>
-                <P class="cardDetail Detail-10">Ardha Chandrasana, or Half Moon Pose, is a standing balance pose that
-                    combines strength, stability, and grace. The posture resembles a crescent moon and challenges both
-                    physical and mental equilibrium while enhancing flexibility and focus.
-                </P>
-                <br><br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style11')">
-                <img src="assets/yogaStyle-11.jpg" />
-                <h1>SETU BANDHA SARVANGASANA<br> (BRIDGE POSE) </h1>
-                <P class="cardDetail Detail-11">Setu Bandha Sarvangasana, or Bridge Pose, is a gentle backbend that
-                    stretches the chest, spine, and hips while strengthening the legs, glutes, and lower back. This pose
-                    is often used as a preparatory posture for deeper backbends and is beneficial for both restorative
-                    and active yoga practices.
-                </P>
-                <br>
-                <p>Click To Read More...</p>
-            </div>
-
-            <div class="style-card" onclick="showDetails('style12')">
-                <img src="assets/yogaStyle-12.jpg" />
-                <h1>ADHO MUKHA SVANASANA<br> (DOWNWARD-FACING DOG) </h1>
-                <P class="cardDetail Detail-12">Adho Mukha Svanasana, or Downward-Facing Dog, is one of the most
-                    recognizable and foundational yoga poses. It is an inverted V-shape that stretches and strengthens
-                    the entire body, promoting flexibility, circulation, and a sense of grounding. This pose is often
-                    used as a transitional pose between other asanas in a flow.
-                </P>
-                <p>Click To Read More...</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="style-details hidden" id="details">
-        <button class="close-btn" onclick="hideDetails()">X</button>
-        <div class="details-content">
-            <div class="image-placeholder"></div>
-            <h2 id="style-name">Style Name</h2>
-            <p id="style-description">Description of the style</p>
-            <p id="style-benefits">Benefits of the style</p>
-            <div class="video-section">
-                <p>Or watch video:</p>
-                <button class="play-btn">▶ Watch Video</button>
-            </div>
-        </div>
-    </section>
-    <!-- Footer  -->
-    <footer class="footer" id="contact">
-        <div class="section__container footer__container">
-            <div class="footer__col">
-                <div class="footer__logo"><a href="#">YOGASAN</a></div>
-            </div>
-            <div class="footer__col">
-                <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.<br>Email:
-                    yogasan002@gmail.com</p>
-            </div>
-            <div class="footer__col">
-                <div class="footer__socials">
-                    <a href="#"><i class="ri-twitter-fill"></i></a>
-                    <a href="#"><i class="ri-facebook-fill"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-youtube-line"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bar">
-            Copyright © 2024 YOGASAN. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- Scroll-to-Top Button -->
-    <button id="scrollToTopBtn" title="Go to top">↑</button>
-    <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
-
-    <script>
-
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdownToggles = document.querySelectorAll('#dropdown-toggle');
+      
+        dropdownToggles.forEach(toggle => {
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdownMenu = toggle.nextElementSibling;
+      
+            // Close other dropdowns if any
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+              if (menu !== dropdownMenu) {
+                menu.style.display = 'none';
+              }
+            });
+      
+            // Toggle current dropdown
+            if (dropdownMenu.style.display === 'block') {
+              dropdownMenu.style.display = 'none';
+            } else {
+              dropdownMenu.style.display = 'block';
+            }
+          });
+        });
+      
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+              menu.style.display = 'none';
+            });
+          }
+        });
+    });
+      
+  
+    // Open sidebar
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.add('active');
+      hamburger.style.display = "none"; 
+    });
+  
+    // Close sidebar
+    closeBtn.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.style.display = "block";
+    });
+  
+    // Optional: Close sidebar when clicking a link
+    navLinks.querySelectorAll('.link a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  });
         // ScrollToTop Button
         // Get the button element
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
+  
         // Show or hide the button based on scroll position
         window.onscroll = function () {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -358,7 +70,7 @@
                 scrollToTopBtn.style.display = "none"; // Hide button
             }
         };
-
+  
         // Scroll to the top when the button is clicked
         scrollToTopBtn.onclick = function () {
             window.scrollTo({
@@ -366,15 +78,15 @@
                 behavior: "smooth", // Smooth scroll effect
             });
         };
-
-
+  
+  
         const detailsSection = document.getElementById("details");
         const styleName = document.getElementById("style-name");
         const styleDescription = document.getElementById("style-description");
         const styleBenefits = document.getElementById("style-benefits");
         let currentStyleKey = null;
-
-
+  
+  
         const yogaStylesData = {
             style1: {
                 name: "Vrikshasana (Tree Pose)",
@@ -521,7 +233,6 @@
     <li> Inhale and Lengthen Your Spine: Inhale and lengthen your spine, keeping your head in a neutral position.</li>
     <li> Exhale and Fold Forward: Exhale and fold forward, keeping your knees slightly bent and your arms straight.</li>
     <li> Keep Your Palms and Heels Grounded: Keep your palms and heels grounded and engage your core muscles to support your body.</li>
-    <li> Breathe Naturally: Breathe naturally and smoothly, feeling the stretch in your hamstrings, calves, and spine.</li>
     </ol>
     <br>
     <h3>Precautions and Contraindications</h3><br>
@@ -644,7 +355,7 @@
                 videoUrl: "https://youtu.be/6Ep5VzGqDRU?si=yx3wmDU3R9wuld7S"
             },
         };
-
+  
         function hideDetails() {
             detailsSection.classList.add("hidden");
         }
@@ -668,7 +379,4 @@
                 detailsSection.classList.remove("hidden");
             }
         }
-    </script>
-</body>
-
-</html>
+  

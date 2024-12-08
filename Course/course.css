@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    --primary-color: #bb9e59;
+    --primary-color-dark: #ffffff;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --extra-light: #dfd7c5;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%; /* Prevents horizontal overflow */
+    overflow-x: hidden; /* Ensures no horizontal scrollbars */
+    scroll-behavior: smooth;
+}
+
+.yoga-styles h1 {
+    background-color: var(--extra-light);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.yoga-styles {
+    text-align: center;
+    padding: 50px;
+    background-color: var(--extra-light);
+}
+
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.style-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.style-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.style-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.style-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.style-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.style-details.hidden {
+    display: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5c5c;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.video-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.play-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background-color: #0056b3;
+}
+
+.image-placeholder img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+.cardDetail {
+    padding: 10px;
+    color: var(--text-light);
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 3rem 1rem;
+}
+
+.section__header {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Nav  */
+nav {
+    max-width: 100%;
+    margin: auto;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+nav a{
+    text-decoration: none;
+}
+  
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+  
+.nav__logo img {
+    max-width: 100px;
+    
+}
+  
+.nav__logo span {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+  
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    
+}
+.nav__links img {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(92%) saturate(5548%) hue-rotate(0deg) brightness(97%) contrast(107%);
+}
+  
+.link a {
+    padding: 5px;
+    color: var(--text-light);
+    text-decoration: none;
+}
+  
+.link a:hover {
+    color: var(--primary-color);
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    background-color: #fff; /* Adjust as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+.dropdown-menu li {
+    padding: 12px;
+}
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #000; /* Adjust as needed */
+}
+#dropdown-toggle {
+    text-decoration: none;
+    color: var(--text-light);
+}
+#dropdown-toggle:hover {
+    color: var(--primary-color);
+}
+  
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+  
+  /* Hamburger menu hidden by default */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--primary-color);
+}  
+
+.close-btn {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 10px;
+}
+  
+.nav__links.active .close-btn {
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 999px) {
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        z-index: 1;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        width: 240px;
+        margin-right: 20px;
+    }
+
+    .nav__links.active {
+        display: flex;
+        align-items: start;
+    }
+    .nav__links .close-btn {
+        align-self: flex-end;
+    }
+
+    .link a {
+        color: var(--white);
+    }
+
+    #dropdown-toggle {
+        margin-left: 4px;
+        color: #fff;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-top: 20px;
+    }
+}
+
+/* Footer  */
+.footer {
+    background-color: var(--primary-color);
+    padding: 1rem 1rem;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+}
+
+.footer__logo a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer__col p {
+    font-size: 1.25rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.footer__socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    aspect-ratio: 1;
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: #f7ebf330;
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+.footer__bar {
+    font-size: 0.9rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.logout {
+    height: 20px;
+}
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    background-color: #333;
+    color: var(--white);
+    border: none;
+    border-radius: 20%;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+  
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+/* Ensure the Tidio bot stays within the viewport */
+.tidio-widget {
+    max-width: 100%;
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    z-index: 1001;
+}
+
+@media (width < 1032px) {
+    .style-details {
+        font-size: 13px;
+        max-width: 450px;
+    }
+}
+
+@media (width < 900px) {
+    .nav__links {
+        gap: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+}
+
+@media (width < 820px) {
+    .style-details {
+        font-size: 12px;
+        max-width: 450px;
+    }
+}
+
+@media (width < 750px) {
+    .nav__links {
+        gap: 0.5rem;
+    }
+}
+
+@media (width < 665px) {
+    .styles-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+   .style-details {
+        font-size: 11px;
+        max-width: max-content;
+        padding: 28px;
+    }
+    .play-btn {
+        width: 80px;
+        padding: 10px;
+        font-size: 8px;
+    }
+}
+
+@media (width < 600px) {
+    .nav__links {
+        display: none;
+    }
+    .style-details {
+        font-size: 8px;
+        max-width: max-content;
+        padding: 28px;
+    }
+    .play-btn {
+        width: 80px;
+        padding: 10px;
+        font-size: 8px;
+    }
+}
+
+

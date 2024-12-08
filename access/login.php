@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        header("Location: ../home.html"); // Redirect to home page
+        header("Location: ../Home/home.html"); // Redirect to home page
         exit;
     } else {
         echo "<script>alert('Incorrect password!'); window.history.back();</script>";

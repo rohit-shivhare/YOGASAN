@@ -2,41 +2,54 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-  <link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet" href="../style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile</title>
+	<link rel="icon" type="image/x-icon" href="../assets/logo-web.jpg">
+	<script src="https://unpkg.com/scrollreveal">
+	</script>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="../nav.css">
+	<link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
 
-  <!-- Nav  -->
+	<!-- Nav  -->
   <nav>
-    <div class="nav__logo">
-      <img src="../assets/logo.png" alt="logo" />
-      <span>YOGASAN</span>
-    </div>
+    <a href="../Home/home.html">
+      <div class="nav__logo">
+        <img src="../Assets/logo.png" alt="logo"/>
+        <span>YOGASAN</span>
+      </div>
+    </a>
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav__links" id="nav-links">
-      <li class="link"><a href="../home.html">Home</a></li>
-      <li class="link"><a href="../course.html">Course</a></li>
-      <li class="link"><a href="../membership.html">Membership</a></li>
-      <li class="link"><a href="../members/team.html">About</a></li>
-      <li class="link"><a href="../contact.html">Contact</a></li>
-      <li class="link"><a href="profile.html">Profile</a></li>
-      <li class="link"><a href="../home.html"><img src="../assets/logout.png " class="logout" /></a></li>
+        <li class="close-btn" id="close-btn">&times;</li>
+        <li class="link" title="Home-Page"><a href="../Home/home.html">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="link" id="dropdown-toggle">Classes <span style="font-size: 13px;">&#9660;</span></a>
+            <ul class="dropdown-menu">
+              <li class="link" title="Courses"><a href="../Course/course.html">Courses</a></li>
+              <li class="link" title="Live Sessions"><a href="../Course/onlineClasses.html">Live Session</a></li>
+            </ul>
+          </li>
+        <li class="link" title="Membership"><a href="../Membership/membership.html">Membership</a></li>
+        <li class="link" title="Contact us"><a href="../Contact/contact.html">Contact Us</a></li>
+        <li class="link" title="Your Profile"><a href="../Profile/profile.html">Profile</a></li>
+        <li class="link" title="Meet Our Team"><a href="../Members/team.html">Our Team</a></li>
+        <li class="link" title="Log-out"><a href="../index.html"><img src="../Assets/logout.png " class="logout" alt="Log-out"/></a></li>
     </ul>
-  </nav>
+</nav>
+
   <section class="profile">
     <div class="profile-container">
       <div class="profile-background"></div>
       <div class="profile-photo">
-        <img src="../members/teamPhoto/dummyProfile.jpg" alt="Profile Photo" class="profile-img">
+        <img src="../Members/teamPhoto/dummyProfile3.jpg" class="profile-img" id="the-picture"/> 
+        <input id="uploaded" type="file" accept="image/*" title="Upload your image" onchange="uploadedImg()">
       </div>
+      <h1>Your Information!</h1>
       <div class="profile-details">
         <div class="detail"><b>Name:</b> <span id="name">Loading...</span></div>
         <div class="detail"><b>Email:</b> <span id="email">Loading...</span></div>
@@ -52,17 +65,36 @@
           <h2>Edit Profile</h2>
           <form id="edit-form">
             <label for="edit-name">Name:</label>
-            <input type="text" id="edit-name" name="name" required>
+            <input type="text" id="edit-name" name="name" required minlength="3" maxlength="20">
             <label for="edit-email">Email:</label>
-            <input type="email" id="edit-email" name="email" required>
+            <input type="email" id="edit-email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" maxlength="50">
             <label for="edit-phone">Phone:</label>
-            <input type="text" id="edit-phone" name="phone" required>
+            <input type="text" id="edit-phone" name="phone" required minlength="10" maxlength="10">
             <label for="edit-dob">D.O.B:</label>
             <input type="date" id="edit-dob" name="dob" required>
             <label for="edit-gender">Gender:</label>
-            <input type="text" id="edit-gender" name="gender" required>
+            <!-- <input type="text" id="edit-gender" name="gender" required> -->
+            <select name="gender" id="edit-gender" required>
+              <option value="" selected disabled hidden>Select your gender</option>
+              <option value="male" selected>Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
             <label for="edit-country">Country:</label>
-            <input type="text" id="edit-country" name="country" required>
+            <!-- <input type="text" id="edit-country" name="country" required> -->
+            <select id="edit-country" name="country" required>
+              <option value="" selected disabled hidden>Select your country</option>
+              <option value="India">India</option>
+              <option value="China">China</option>
+              <option value="South Korea">South Korea</option>
+              <option value="USA">USA</option>
+              <option value="North Korea">North Korea</option>
+              <option value="Russia">Russia</option>
+              <option value="Germany">Germany</option>
+              <option value="Canada">Canada</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="other">Other</option>
+            </select>
             <button type="submit">Save Changes</button>
           </form>
         </div>
@@ -105,7 +137,6 @@
   <!-- Scroll-to-Top Button -->
   <button id="scrollToTopBtn" title="Go to top">↑</button>
   <script src="profile.js"></script>
-  <script src="../main.js"></script>
   <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
 
 </body>

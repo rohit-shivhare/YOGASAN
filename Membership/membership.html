@@ -2,30 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <title>YOGASAN Membership</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+	<link rel="stylesheet" href="membership.css" />
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<title>YOGASAN Membership</title>
+	<link rel="icon" type="image/x-icon" href="assets/logo-web.jpg">
 </head>
 
 <body>
-    <!-- Nav  -->
-    <nav>
-        <div class="nav__logo">
-            <a href="home.html"><img src="assets/logo.png" alt="logo" /></a>
+	<!-- Nav  -->
+	<nav>
+        <a href="../Home/home.html">
+          <div class="nav__logo">
+            <img src="../Assets/logo.png" alt="logo"/>
             <span>YOGASAN</span>
-        </div>
+          </div>
+        </a>
         <div class="hamburger" id="hamburger">&#9776;</div>
         <ul class="nav__links" id="nav-links">
-            <li class="link"><a href="home.html">Home</a></li>
-            <li class="link"><a href="course.html">Course</a></li>
-            <li class="link"><a href="#">Membership</a></li>
-            <li class="link"><a href="members/team.html">About</a></li>
-            <li class="link"><a href="contact.html">Contact</a></li>
-            <li class="link"><a href="Profile/profile.html">Profile</a></li>
+            <li class="close-btn" id="close-btn">&times;</li>
+            <li class="link" title="Home-Page"><a href="../Home/home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="link" id="dropdown-toggle">Classes <span style="font-size: 13px;">&#9660;</span></a>
+                <ul class="dropdown-menu">
+                  <li class="link" title="Courses"><a href="../Course/course.html">Courses</a></li>
+                  <li class="link" title="Live Sessions"><a href="../Course/onlineClasses.html">Live Session</a></li>
+                </ul>
+              </li>
+            <li class="link" title="Membership"><a href="../Membership/membership.html">Membership</a></li>
+            <li class="link" title="Contact us"><a href="../Contact/contact.html">Contact Us</a></li>
+            <li class="link" title="Your Profile"><a href="../Profile/profile.html">Profile</a></li>
+            <li class="link" title="Meet Our Team"><a href="../Members/team.html">Our Team</a></li>
+            <li class="link" title="Log-out"><a href="../index.html"><img src="../Assets/logout.png " class="logout" alt="Log-out"/></a></li>
         </ul>
     </nav>
 
@@ -89,8 +99,7 @@
                     <p>5-10 Live session</p>
                     <p>Book a group class</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-2"><a href="https://rzp.io/rzp/EQIQfj1e">GET
-                            STARTED</a></button>
+                    <button class="btn membership__btn btn-2"><a href="https://rzp.io/rzp/EQIQfj1e">GET STARTED</a></button>
                 </div>
                 <div class="membership__card">
                     <h4>Annual Membership</h4>
@@ -102,8 +111,7 @@
                     <p>Group trainer</p>
                     <p>Book a group class</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-3"><a href="https://rzp.io/rzp/MxqkhDw">GET
-                            STARTED</a></button>
+                    <button class="btn membership__btn btn-3"><a href="https://rzp.io/rzp/MxqkhDw">GET STARTED</a></button>
                 </div>
                 <div class="membership__card">
                     <h4>Premium Membership</h4>
@@ -115,8 +123,7 @@
                     <p>Group trainer</p>
                     <p>Exclusive Workshops</p>
                     <p>Fitness orientation</p>
-                    <button class="btn membership__btn btn-4"><a href="https://rzp.io/rzp/95lpV0K">GET
-                            STARTED</a></button>
+                    <button class="btn membership__btn btn-4"><a href="https://rzp.io/rzp/95lpV0K">GET STARTED</a></button>
                 </div>
             </div>
         </div>
@@ -149,49 +156,8 @@
     <!-- Scroll-to-Top Button -->
     <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-    <script src="main.js"></script>
+    <script src="membership.js"></script>
     <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
-
-    <script>
-
-        function Activate() {
-            alert("Activate Successfully!!");
-        }
-
-        // Function to handle button click
-        function handleButtonClick() {
-            const buttonClicked = localStorage.getItem("buttonClicked");
-            if (buttonClicked === "true") {
-                // If already clicked, show an alert with the stored date
-                const clickedDate = localStorage.getItem("clickedDate");
-                alert(`You have already clicked the button on ${clickedDate}`);
-                return;
-            }
-            // Get the current date
-            const currentDate = new Date().toDateString();
-            // Store the date and mark the button as clicked
-            localStorage.setItem("buttonClicked", "true");
-            localStorage.setItem("clickedDate", currentDate);
-            // Display the date
-            document.getElementById("dateDisplay").innerText = `You clicked on: ${currentDate}`;
-            // Disable the button
-            document.getElementById("showDateBtn").disabled = true;
-        }
-        // Function to initialize the state on page load
-        function initializeState() {
-            const buttonClicked = localStorage.getItem("buttonClicked");
-            if (buttonClicked === "true") {
-                // If already clicked, disable the button and display the stored date
-                document.getElementById("showDateBtn").disabled = true;
-                const clickedDate = localStorage.getItem("clickedDate");
-                document.getElementById("dateDisplay").innerText = `${clickedDate}`;
-            }
-        }
-        // Initialize the state on page load
-        window.onload = initializeState;
-        // Add click event listener to the button
-        document.getElementById("showDateBtn").addEventListener("click", handleButtonClick);
-    </script>
 
 </body>
 

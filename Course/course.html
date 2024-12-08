@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yoga Styles</title>
+	<link rel="icon" type="image/x-icon" href="../Assets/logo-web.jpg">
+	<link rel="stylesheet" href="course.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+	<!-- Nav  -->
+	<nav>
+        <a href="../Home/home.html">
+          <div class="nav__logo">
+            <img src="../Assets/logo.png" alt="logo"/>
+            <span>YOGASAN</span>
+          </div>
+        </a>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav__links" id="nav-links">
+            <li class="close-btn" id="close-btn">&times;</li>
+            <li class="link" title="Home-Page"><a href="../Home/home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="link" id="dropdown-toggle">Classes <span style="font-size: 13px;">&#9660;</span></a>
+                <ul class="dropdown-menu">
+                  <li class="link" title="Courses"><a href="../Course/course.html">Courses</a></li>
+                  <li class="link" title="Live Sessions"><a href="../Course/onlineClasses.html">Live Session</a></li>
+                </ul>
+              </li>
+            <li class="link" title="Membership"><a href="../Membership/membership.html">Membership</a></li>
+            <li class="link" title="Contact us"><a href="../Contact/contact.html">Contact Us</a></li>
+            <li class="link" title="Your Profile"><a href="../Profile/profile.html">Profile</a></li>
+            <li class="link" title="Meet Our Team"><a href="../Members/team.html">Our Team</a></li>
+            <li class="link" title="Log-out"><a href="../index.html"><img src="../Assets/logout.png " class="logout" alt="Log-out"/></a></li>
+        </ul>
+    </nav>
+
+    <h1 class="section__header" style="margin-bottom: 50px; margin-top: 10px">Yoga Styles</h1>
+    <section class="yoga-styles">
+        <div class="styles-grid">
+
+            <div class="style-card" onclick="showDetails('style1')">
+                <img src="../Assets/yogaStyle-1.jpg" />
+                <h1>VRIKSHASANA<br> (TREE POSE) </h1>
+                <p class="cardDetail Detail-1">Vrikshasana, also known as the Tree Pose, is a classic standing yoga
+                    posture that symbolizes balance, stability, and rootedness, much like a tree. It helps in
+                    strengthening the legs, improving focus, and enhancing overall body balance.
+                </p>
+                <br><br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style2')">
+                <img src="../Assets/yogaStyle-2.jpg" />
+                <h1>BHUJANGASANA<br> (COBRA POSE) </h1>
+                <p class="cardDetail Detail-2">Bhujangasana, or Cobra Pose, is a rejuvenating backbend in yoga that
+                    mimics the posture of a cobra with its hood raised. It is part of the traditional Surya Namaskar
+                    (Sun Salutation) sequence and is known for its therapeutic benefits for the spine and mental health.
+                </p>
+                <br><br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style3')">
+                <img src="../Assets/yogaStyle-3.jpg" />
+                <h1>SURYA NAMASKAR<br> (SUN SALUTATION) </h1>
+                <p class="cardDetail Detail-3">Surya Namaskar, or Sun Salutation, is a dynamic sequence of 12 yoga poses
+                    performed in a flowing sequence to offer gratitude to the sun, the source of life and energy. It
+                    combines asanas, pranayama (breathing), and meditation, making it a holistic practice for the body,
+                    mind, and soul.
+                </p>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style4')">
+                <img src="../Assets/yogaStyle-4.jpg" />
+                <h1>VIPARITA KARANI<br> (LEGS UP THE WALL POSE) </h1>
+                <P class="cardDetail Detail-4">Viparita Karani, or Legs Up the Wall Pose, is a restorative yoga posture
+                    that promotes relaxation, improves circulation, and rejuvenates the mind and body. It is a gentle
+                    inversion that is accessible to practitioners of all levels.
+                </P>
+                <br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style5')">
+                <img src="../Assets/yogaStyle-5.jpg" />
+                <h1>DHANURASANA<br> (BOW POSE) </h1>
+                <P class="cardDetail Detail-5">Dhanurasana, or Bow Pose, is a deep backbend that resembles a stretched
+                    bow, with the body forming the curve and the arms acting as the bowstring. This dynamic pose
+                    strengthens the spine, stimulates digestion, and boosts energy levels.
+                </P>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style6')">
+                <img src="../Assets/yogaStyle-6.jpg" />
+                <h1>SAVASANA<br> (CORPSE POSE) </h1>
+                <P class="cardDetail Detail-6">Savasana, or Corpse Pose, is a restorative yoga posture often practiced
+                    at the end of a session to promote deep relaxation and integrate the benefits of the preceding
+                    poses. Despite its simplicity, it is a profound practice for calming the mind and rejuvenating the
+                    body.
+                </P>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style7')">
+                <img src="../Assets/yogaStyle-7.jpg" />
+                <h1>UTTANASANA<br> (STANDING FORWARD FOLD) </h1>
+                <P class="cardDetail Detail-7">Uttanasana, or Standing Forward Fold, is a foundational yoga pose that
+                    involves bending forward from the hips and allowing the upper body to hang over the legs. This pose
+                    deeply stretches the hamstrings and spine while promoting relaxation and introspection.
+                </P>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style8')">
+                <img src="../Assets/yogaStyle-8.jpg" />
+                <h1>TRIKONASANA<br> (TRIANGLE POSE) </h1>
+                <P class="cardDetail Detail-8">Trikonasana, or Triangle Pose, is a classic standing yoga posture that
+                    strengthens and stretches the entire body. Named after the triangular shape formed by the pose,
+                    Trikonasana enhances stability, flexibility, and focus.
+                </P>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style9')">
+                <img src="../Assets/yogaStyle-9.jpg" />
+                <h1>VRIABHADRASANA<br> (WARRIOR POSE) </h1>
+                <P class="cardDetail Detail-9">Virabhadrasana, or Warrior Pose, is a dynamic and empowering standing
+                    yoga posture that builds strength, stability, and focus. It is named after the mythical warrior
+                    Virabhadra and symbolizes courage and determination.
+                </P>
+                <br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style10')">
+                <img src="../Assets/yogaStyle-10.jpg" />
+                <h1>ARDHA CHANDRASANA<br> (HALF MOON POSE) </h1>
+                <P class="cardDetail Detail-10">Ardha Chandrasana, or Half Moon Pose, is a standing balance pose that
+                    combines strength, stability, and grace. The posture resembles a crescent moon and challenges both
+                    physical and mental equilibrium while enhancing flexibility and focus.
+                </P>
+                <br><br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style11')">
+                <img src="../Assets/yogaStyle-11.jpg" />
+                <h1>SETU BANDHA SARVANGASANA<br> (BRIDGE POSE) </h1>
+                <P class="cardDetail Detail-11">Setu Bandha Sarvangasana, or Bridge Pose, is a gentle backbend that
+                    stretches the chest, spine, and hips while strengthening the legs, glutes, and lower back. This pose
+                    is often used as a preparatory posture for deeper backbends and is beneficial for both restorative
+                    and active yoga practices.
+                </P>
+                <br>
+                <p>Click To Read More...</p>
+            </div>
+
+            <div class="style-card" onclick="showDetails('style12')">
+                <img src="../Assets/yogaStyle-12.jpg" />
+                <h1>ADHO MUKHA SVANASANA<br> (DOWNWARD-FACING DOG) </h1>
+                <P class="cardDetail Detail-12">Adho Mukha Svanasana, or Downward-Facing Dog, is one of the most
+                    recognizable and foundational yoga poses. It is an inverted V-shape that stretches and strengthens
+                    the entire body, promoting flexibility, circulation, and a sense of grounding. This pose is often
+                    used as a transitional pose between other asanas in a flow.
+                </P>
+                <p>Click To Read More...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="style-details hidden" id="details">
+        <button class="close-button" onclick="hideDetails()">X</button>
+        <div class="details-content">
+            <div class="image-placeholder"></div>
+            <h2 id="style-name">Style Name</h2>
+            <p id="style-description">Description of the style</p>
+            <p id="style-benefits">Benefits of the style</p>
+            <div class="video-section">
+                <p>Or watch video:</p>
+                <button class="play-btn">▶ Watch Video</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer  -->
+    <footer class="footer" id="contact">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo"><a href="#">YOGASAN</a></div>
+            </div>
+            <div class="footer__col">
+                <p>ASIA Campus, Drive In Rd, Thaltej, <br>Ahmedabad-380054, Gujarat, India.<br>Email:
+                    yogasan002@gmail.com</p>
+            </div>
+            <div class="footer__col">
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 YOGASAN. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+    <script src="course.js"></script>
+    <script src="//code.tidio.co/jmb86djfxswoiheo9mz2hm72bff00e3j.js" async></script>
+</body>
+
+</html>
