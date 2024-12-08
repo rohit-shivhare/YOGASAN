@@ -4,7 +4,7 @@ Welcome to Yogasan, your online platform for discovering yoga poses, routines, a
 
 ## Live Website
 
-You can check out the live website here: [Yogasan Website](https://yogasan.freesite.online/)
+You can check out the live website here: [Yogasan Website](https://yogasan.freesite.online/YOGASAN/?i=1)
 
 ## Features
 
