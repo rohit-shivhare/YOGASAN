@@ -375,3 +375,25 @@ nav a{
         display: none;
     }
 }
+@media (max-width:450px){
+    .card{
+        margin:1px;
+    }
+    .card-title {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .card-benefit {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+    .join-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .container{
+        padding:25px;
+    }
+}
